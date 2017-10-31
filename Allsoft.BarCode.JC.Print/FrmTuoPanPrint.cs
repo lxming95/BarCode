@@ -8,6 +8,7 @@ using System.Linq;
 using System.Windows.Forms;
 using DevExpress.XtraEditors;
 using Allsoft.BarCode.Print;
+using System.Text.RegularExpressions;
 
 namespace Allsoft.BarCode.JC
 {
@@ -20,16 +21,24 @@ namespace Allsoft.BarCode.JC
 
         private void FrmTuoPanPrint_Load(object sender, EventArgs e)
         {
+            DataTable dt = new DataTable();
+            dt.Columns.Add("cCode",typeof(string));
             txtPrintData.Text = DateTime.Now.ToString();
             txtPrintPersion.Text = Pub.PubValue.UserName;
+            gcProdctList.DataSource = dt;
         }
 
+        /// <summary>
+        /// 清空按钮点击事件
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnClear_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             clear();
         }
         /// <summary>
-        /// 
+        ///  打印按钮点击事件
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -42,6 +51,37 @@ namespace Allsoft.BarCode.JC
             easyReport1.PrintReport(false, false, true, false);
         }
         /// <summary>
+        /// 录入事件
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void txtCode_KeyDown(object sender, KeyEventArgs e)
+        {
+
+            if (e.KeyCode == Keys.Enter)//如果输入的是回车键  
+            {
+                if (isSafe(txtCode.Text))
+                {
+                    DataTable dt = gcProdctList.DataSource as DataTable;
+                    dt.Rows.Add();
+                    dt.Rows[dt.Rows.Count-1]["cCode"] = txtCode.Text;
+                    gcProdctList.DataSource = dt;
+                }
+            }
+            txtCode.Text = "";
+        }
+        /// <summary>
+        /// 删行
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void delRow_Click(object sender, EventArgs e)
+        {
+            //删行
+            gvProdctList.DeleteRow(gvProdctList.FocusedRowHandle);
+        }
+
+        /// <summary>
         /// 清空界面
         /// </summary>
         private void clear()
@@ -50,26 +90,64 @@ namespace Allsoft.BarCode.JC
             txtPrintData.Text = "";
             txtPrintPersion.Text = "";
         }
-
+        /// <summary>
+        /// 向数据库中插入数据
+        /// </summary>
+        /// <returns></returns>
         private DataTable insert()
         {
-            DataTable dt = SqlHelper.Table("");
-            return dt;
-        }
-
-        private void txtCode_KeyDown(object sender, KeyEventArgs e)
-        {
-
-            if (e.KeyCode == Keys.Enter)//如果输入的是回车键  
+            DataTable dt = new DataTable();
+            if (dtStr()!= "")
             {
-                DataTable dt = gcProdctList.DataSource as DataTable;
-                dt.Rows.Add();
+                DataTable dt1 = SqlHelper.Table("select max(ls_code) as code from data_printlog");
+                string s = "";
+                if (dt1 == null || dt1.Rows.Count <= 0|| dt1.Rows[0]["code"].ToString()=="")
+                {
+                    s = DateTime.Now.ToString("yyyyMMdd") + "001";
+                }
+                else
+                {
+                    s = (Convert.ToDecimal(dt1.Rows[0]["code"])+1).ToString();
+                }
+                SqlHelper.ExecuteNonQuery("update data_printlog set ls_code='"+s+"' where g_ccdcode in("+dtStr()+")");
+                dt= SqlHelper.Table("select * from data_printlog where ls_code='"+s+"'");
+                
             }
+            return dt;
+
         }
 
-        private void delRow_Click(object sender, EventArgs e)
+        /// <summary>
+        /// 输入字符的安全检测
+        /// </summary>
+        /// <param name="s"></param>
+        /// <returns></returns>
+        private bool isSafe(string s)
         {
+            //  过滤@"[-|;|,|\/||||\}|\{|%|@|\*|!|\']"""
+            if (Regex.IsMatch(s, @"[;|,|\/||||\}|\{|%|@|\*|!|\']"""))
+            {
+                XtraMessageBox.Show("请不要录入特殊字符");
+                return false;
+            }
+            else { return true; }
+        }
 
+        /// <summary>
+        /// 获得录入的 条码拼接字符
+        /// </summary>
+        /// <param name="dt"></param>
+        /// <returns></returns>
+        private string dtStr()
+        {
+            DataTable dt = gcProdctList.DataSource as DataTable;
+            string s = "";
+            for (int i = 0; i < dt.Rows.Count; i++)
+            {
+                s += " '"+dt.Rows[i]["cCode"].ToString()+"',";
+            }
+            s = s.Substring(0, s.Length - 1);
+            return s;
         }
     }
 }

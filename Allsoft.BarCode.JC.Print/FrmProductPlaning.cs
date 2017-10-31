@@ -3,6 +3,7 @@ using BarCode.BaseForm;
 using DevExpress.XtraEditors;
 using System;
 using System.Data;
+using System.Data.OleDb;
 using System.Data.SqlClient;
 using System.IO;
 using System.Windows.Forms;
@@ -17,8 +18,14 @@ namespace Allsoft.BarCode.JC
             InitializeComponent();
             txtMakePsersion.Text = Pub.PubValue.UserName;
             gvPlaning.OptionsBehavior.Editable = false;
+            btnPrint.Enabled = false;
+            btnCut.Enabled = false;
+            btnEdit.Enabled = false;
+            btnDel.Enabled = false;
+            btnSave.Enabled = false;
             btnRedo.Enabled = false;
-            this.btnSave.Enabled = false;
+            btnCheck.Enabled = false;
+            btnUnapprove.Enabled = false;
             cblist();
 
         }
@@ -64,14 +71,22 @@ namespace Allsoft.BarCode.JC
             //this.txtMakePsersion.Text = Pub.PubValue.UserName;
             start();
         }
-
+        /// <summary>
+        /// 增行
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void simpleButton1_Click(object sender, EventArgs e)
         {
             this.gvPlaning.AddNewRow();
             this.btnSave.Enabled = true;
             this.btnRedo.Enabled = true;
         }
-
+        /// <summary>
+        /// 删行
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void simpleButton2_Click(object sender, EventArgs e)
         {
             this.gvPlaning.DeleteRow(this.gvPlaning.FocusedRowHandle);
@@ -79,7 +94,11 @@ namespace Allsoft.BarCode.JC
             this.btnRedo.Enabled = true;
             start();
         }
-
+        /// <summary>
+        /// gv焦点转移事件
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void gvPlaning_FocusedRowChanged(object sender, DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventArgs e)
         {
             DataRow row = gvPlaning.GetDataRow(gvPlaning.FocusedRowHandle);
@@ -108,7 +127,11 @@ namespace Allsoft.BarCode.JC
                 cbPacking.Items.Add(dt.Rows[i]["cPacking"]);
             }
         }
-
+        /// <summary>
+        /// gv编辑事件
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void gvPlaning_ShowingEditor(object sender, System.ComponentModel.CancelEventArgs e)
         {
             if (!edit)
@@ -130,7 +153,11 @@ namespace Allsoft.BarCode.JC
                 }
             }
         }
-
+        /// <summary>
+        /// 复卷分切按钮
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnCut_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             DataRow row = gvPlaning.GetDataRow(gvPlaning.FocusedRowHandle);
@@ -148,7 +175,11 @@ namespace Allsoft.BarCode.JC
             frm.Show();
 
         }
-
+        /// <summary>
+        /// 审核按钮
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnCheck_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             SqlParameter[] param = new SqlParameter[] { new SqlParameter("@cCode", this.txtcode.Text), };
@@ -166,7 +197,11 @@ namespace Allsoft.BarCode.JC
             btnCheck.Enabled = false;
             start();
         }
-
+        /// <summary>
+        /// 删除按钮
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnDel_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             if (XtraMessageBox.Show("确认删除这张数据表？", "确认", MessageBoxButtons.OKCancel, MessageBoxIcon.Question) != DialogResult.OK)
@@ -178,7 +213,11 @@ namespace Allsoft.BarCode.JC
             SqlHelper.ExecuteNonQuery("DELETE from Data_Planing where cDocumentsNum=@cCode");
 
         }
-
+        /// <summary>
+        /// 弃审按钮
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnUnapprove_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             SqlParameter[] param = new SqlParameter[] { new SqlParameter("@cCode", this.txtcode.Text), };
@@ -199,7 +238,11 @@ namespace Allsoft.BarCode.JC
             btnCheck.Enabled = true;
             start();
         }
-
+        /// <summary>
+        /// 编辑按钮
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnEdit_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             SqlParameter[] param = new SqlParameter[] { new SqlParameter("@cCode", this.txtcode.Text), };
@@ -223,7 +266,11 @@ namespace Allsoft.BarCode.JC
                 btnRedo.Enabled = true;
             }
         }
-
+        /// <summary>
+        /// 添加表按钮
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnAddTable_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             SqlParameter[] param = new SqlParameter[] { new SqlParameter("@cCode", this.txtcode.Text), };
@@ -254,7 +301,11 @@ namespace Allsoft.BarCode.JC
             gcPlaning.DataSource = dt;
             start();
         }
-
+        /// <summary>
+        /// 撤销按钮
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnRedo_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             if (this.btnSave.Enabled)
@@ -271,7 +322,11 @@ namespace Allsoft.BarCode.JC
             edit = false;
             start();
         }
-
+        /// <summary>
+        /// 保存按钮
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnSave_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             gvPlaning.CloseEditor();                                   //关闭编辑状态
@@ -280,14 +335,14 @@ namespace Allsoft.BarCode.JC
             this.txtMakeTime.Text= DateTime.Now.ToString();
             this.txtMakePsersion.Text= Pub.PubValue.UserName;
             SqlParameter[] param = new SqlParameter[] { new SqlParameter("@cCode", this.txtcode.Text), new SqlParameter("@cMake_person", this.txtMakePsersion.Text), new SqlParameter("@dMake_time", DateTime.Now.ToString()) };
-
+            //插入或者更新单据表
             SqlHelper.ExecuteNonQuery("IF EXISTS(SELECT* FROM Data_Documents WHERE cCode = @cCode)"
                                         + " BEGIN"
                                         + " UPDATE Data_Documents SET cMake_person =@cMake_person, dMake_time=@dMake_time,do_flag='0' WHERE cCode = @cCode"
                                         + " END "
-                                        +"ELSE "
-                                        +"BEGIN "
-                                        + "INSERT INTO Data_Documents(cCode,cMake_person,dMake_time,do_flag) VALUES(@cCode, @cMake_person,@dMake_time,'0')"
+                                        + " ELSE "
+                                        + " BEGIN "
+                                        + " INSERT INTO Data_Documents(cCode,cMake_person,dMake_time,do_flag) VALUES(@cCode, @cMake_person,@dMake_time,'0')"
                                         + " END", param);
 
             //SqlHelper.ExecuteNonQuery("DELETE from Data_Planing where cDocumentsNum=@cCode", param);
@@ -308,26 +363,54 @@ namespace Allsoft.BarCode.JC
             {
                 if (dt.Rows[i]["cSequence"]!=DBNull.Value)
                 {
-                    param = new SqlParameter[] { new SqlParameter("@cSequence", dt.Rows[i]["cSequence"]), new SqlParameter("@cCode", dt.Rows[i]["cCode"]),
-                    new SqlParameter("@cMachhine", dt.Rows[i]["cMachhine"]),new SqlParameter("@cModel", dt.Rows[i]["cModel"]),
-                    new SqlParameter("@iWindingNum", dt.Rows[i]["iWindingNum"]),new SqlParameter("@cSortModel", dt.Rows[i]["cSortModel"]),
-                    new SqlParameter("@iSortNum", dt.Rows[i]["iSortNum"]),new SqlParameter("@cUse", dt.Rows[i]["cUse"]),
-                    new SqlParameter("@cRequest", dt.Rows[i]["cRequest"]),new SqlParameter("@cCustomer", dt.Rows[i]["cCustomer"]),
-                    new SqlParameter("@cLayer", dt.Rows[i]["cLayer"]),new SqlParameter("@cEmbossed", dt.Rows[i]["cEmbossed"]),
-                    new SqlParameter("@cPacking", dt.Rows[i]["cPacking"]),new SqlParameter("@cPackInf", dt.Rows[i]["cPackInf"]),
-                    new SqlParameter("@cNotes", dt.Rows[i]["cNotes"]),new SqlParameter("@cRemarks", dt.Rows[i]["cRemarks"]),
-                    new SqlParameter("@cDocumentsNum", this.txtcode.Text)
+                    #region 将数据制作成SqlParameter[]
+                    param = new SqlParameter[] {
+                        new SqlParameter("@cSequence", dt.Rows[i]["cSequence"]),    //序号
+                        new SqlParameter("@dStartTime", dt.Rows[i]["dStartTime"]),  //生产开始时间
+                        new SqlParameter("@cCode", dt.Rows[i]["cCode"]),            //工单号
+                        new SqlParameter("@cMachhine", dt.Rows[i]["cMachhine"]),    //收卷机
+                        new SqlParameter("@cModelName", dt.Rows[i]["cModelName"]),  //型号
+                        new SqlParameter("@cThickness", dt.Rows[i]["cThickness"]),  //厚度
+                        new SqlParameter("@cWidth", dt.Rows[i]["cWidth"]),          //宽度
+                        new SqlParameter("@cLength", dt.Rows[i]["cLength"]),        //长度
+                        new SqlParameter("@iWindingNum", dt.Rows[i]["iWindingNum"]),//收卷轴数/计划轴数
+                        new SqlParameter("@cSpeed", dt.Rows[i]["cSpeed"]),          //车速
+                        new SqlParameter("@cCostTiem", dt.Rows[i]["cCostTiem"]),    //用时（小时）
+                        new SqlParameter("@cSortModel", dt.Rows[i]["cSortModel"]),  //整理规格（宽*长）
+                        new SqlParameter("@iSortNum", dt.Rows[i]["iSortNum"]),      //整理轴数
+                        new SqlParameter("@cUse", dt.Rows[i]["cUse"]),              //用途
+                        new SqlParameter("@cRequest", dt.Rows[i]["cRequest"]),      //要求
+                        new SqlParameter("@cCustomer", dt.Rows[i]["cCustomer"]),    //客户
+                        new SqlParameter("@cLayer", dt.Rows[i]["cLayer"]),          //涂层
+                        new SqlParameter("@cRequireThickness", dt.Rows[i]["cRequireThickness"]),          //生产要求厚度
+                        new SqlParameter("@cRequireWidth", dt.Rows[i]["cRequireWidth"]),                  //生产要求宽度
+                        new SqlParameter("@cPacking", dt.Rows[i]["cPacking"]),                            //包装方式
+                        new SqlParameter("@cInspectionStandards", dt.Rows[i]["cInspectionStandards"]),    //检验标准
+                        new SqlParameter("@cTemperature", dt.Rows[i]["cTemperature"]),                    //温度
+                        new SqlParameter("@cHumidity", dt.Rows[i]["cHumidity"]),    //湿度
+                        new SqlParameter("@cNotes", dt.Rows[i]["cNotes"]),          //记事
+                        new SqlParameter("@cPackInf", dt.Rows[i]["cPackInf"]),      //包材信息
+                        new SqlParameter("@cDocumentsNum", this.txtcode.Text)       //单据号
+
+                         //new SqlParameter("@cModel", dt.Rows[i]["cModel"]),          //型号（厚度*宽度*长度）
+                         //new SqlParameter("@cEmbossed", dt.Rows[i]["cEmbossed"]),    //压花
+                         //new SqlParameter("@cRemarks", dt.Rows[i]["cRemarks"]),      //备注
                      };
+                    #endregion
                     if (dt.Rows[i]["Pid"] == DBNull.Value)
                     {
-                        SqlHelper.ExecuteNonQuery("INSERT INTO Data_Planing(cSequence,cCode,cMachhine,cModel,iWindingNum,cSortModel,iSortNum,cUse,cRequest,cCustomer,cLayer,cEmbossed,cPacking,cPackInf,cNotes,cRemarks,cDocumentsNum)"
-                            + " VALUES(@cSequence,@cCode,@cMachhine,@cModel,@iWindingNum,@cSortModel,@iSortNum,@cUse,@cRequest,@cCustomer,@cLayer,@cEmbossed,@cPacking,@cPackInf,@cNotes,@cRemarks,@cDocumentsNum)", param);
+                        SqlHelper.ExecuteNonQuery("INSERT INTO Data_Planing(cSequence,dStartTime,cCode,cMachhine,cModelName,cThickness,cWidth,cLength,iWindingNum,cSpeed,cCostTiem,cSortModel,iSortNum,cUse,cRequest,cCustomer,cLayer,cRequireThickness,cRequireWidth,cPacking,cInspectionStandards,cTemperature,cHumidity,cNotes,cPackInf,cDocumentsNum)"
+                            + " VALUES(@cSequence,@dStartTime,@cCode,@cMachhine,@cModelName,@cThickness,@cWidth,@cLength,@iWindingNum,@cSpeed,@cCostTiem,@cSortModel,@iSortNum,@cUse,@cRequest,@cCustomer,@cLayer,@cRequireThickness,@cRequireWidth,@cPacking,@cInspectionStandards,@cTemperature,@cHumidity,@cNotes,@cPackInf,@cDocumentsNum)", param);
                     }
                     else
                     {
-                        SqlHelper.ExecuteNonQuery(" UPDATE Data_Planing SET cCode=@cCode,cMachhine=@cMachhine,cModel=@cModel,iWindingNum=@iWindingNum,cSortModel=@cSortModel," +
-                            "iSortNum=@iSortNum,cUse=@cUse,cRequest=@cRequest,cCustomer=@cCustomer,cLayer=@cLayer,cEmbossed=@cEmbossed,cPacking=@cPacking,cPackInf=@cPackInf,cNotes=@cNotes," +
-                            "cRemarks=@cRemarks,cDocumentsNum=@cDocumentsNum WHERE cSequence = @cSequence", param);
+                        SqlHelper.ExecuteNonQuery(" UPDATE Data_Planing SET cSequence=@cSequence,dStartTime=@dStartTime,cMachhine=@cMachhine,"
+                            +"cModelName=@cModelName,cThickness=@cThickness,cWidth=@cWidth,cLength=@cLength,iWindingNum=@iWindingNum,"
+                            +"cSpeed=@cSpeed,cCostTiem=@cCostTiem,cSortModel=@cSortModel,iSortNum=@iSortNum,cUse=@cUse,"
+                            +"cRequest=@cRequest,cCustomer=@cCustomer,cLayer=@cLayer,cRequireThickness=@cRequireThickness,"
+                            +"cRequireWidth=@cRequireWidth,cPacking=@cPacking,cInspectionStandards=@cInspectionStandards,"
+                            +"cTemperature=@cTemperature,cHumidity=@cHumidity,cNotes=@cNotes,cPackInf=@cPackInf,cDocumentsNum=@cDocumentsNum"
+                            +" WHERE cCode=@cCode", param);
                     }
                 }
             }
@@ -338,7 +421,11 @@ namespace Allsoft.BarCode.JC
             this.btnRedo.Enabled = false;
             btnAddTable.Enabled = true;
         }
-
+        /// <summary>
+        /// 打印按钮
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnPrint_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             DataTable dt = gcPlaning.DataSource as DataTable;
@@ -357,7 +444,11 @@ namespace Allsoft.BarCode.JC
             //easyReport1.CreateReport();                                                                                   //创建初始化模版
             easyReport1.PrintReport(false,false, true, false);                                              //打印
         }
-
+        /// <summary>
+        /// 导出
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnReport_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             if (gcPlaning.DataSource == null) //没有查询数据的处理
@@ -437,6 +528,30 @@ namespace Allsoft.BarCode.JC
             }
         }
 
+        /// <summary>
+        /// 导入
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btnIn_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            DataTable dt = fromDTcolumns(readExcel());
+            if (dt != null || dt.Rows.Count > 0)
+            {
+                gcPlaning.DataSource = dt;
+                btnPrint.Enabled = true;
+                btnCut.Enabled = true;
+                btnIn.Enabled = false;
+                btnAddTable.Enabled = false;
+                btnEdit.Enabled = true;
+                btnDel.Enabled = false;
+                btnSave.Enabled = true;
+                btnRedo.Enabled = true;
+                btnCheck.Enabled = false;
+                btnUnapprove.Enabled = false;
+            }
+        }
+        //gv值改变事件
         private void gvPlaning_CellValueChanged(object sender, DevExpress.XtraGrid.Views.Base.CellValueChangedEventArgs e)
         {
             this.btnSave.Enabled = true;
@@ -520,7 +635,7 @@ namespace Allsoft.BarCode.JC
                 btnUnapprove.Enabled = false;
                 btnPrint.Enabled = false;
                 btnCut.Enabled = false;
-                btnReport.Enabled = false;
+                btnIn.Enabled = false;
             }
         }
         private void valueChanged()
@@ -560,5 +675,89 @@ namespace Allsoft.BarCode.JC
             }
             gvPlaning.UpdateCurrentRow();
         }
+
+        /// <summary>
+        /// 修改模版列名
+        /// </summary>
+        /// <returns></returns>
+        private DataTable fromDTcolumns(DataTable dt)
+        {
+            
+            if (dt != null || dt.Rows.Count > 0)
+            {
+                dt.Columns[1].ColumnName = "cUnit";
+                dt.Columns[2].ColumnName = "cName";
+                dt.Columns[3].ColumnName = "cCurrentJob";
+                dt.Columns[4].ColumnName = "cSex";
+                dt.Columns[5].ColumnName = "cNation";
+                dt.Columns[6].ColumnName = "cNativePlace";
+                dt.Columns[7].ColumnName = "dBirth_date";
+                dt.Columns[8].ColumnName = "dJoin_date";
+                dt.Columns[9].ColumnName = "dWorkDate";
+                dt.Columns[10].ColumnName = "cFull_timeEducation";
+                dt.Columns[11].ColumnName = "cFull_timeSchool";
+                dt.Columns[12].ColumnName = "cIn_serviceEducation";
+                dt.Columns[13].ColumnName = "cIn_serviceSchool";
+                dt.Columns[14].ColumnName = "cResume";
+                dt.Columns[15].ColumnName = "dInOffice";
+                dt.Columns[16].ColumnName = "dSameOffic";
+                dt.Columns[17].ColumnName = "cRemarks";
+            }
+            return dt;
+        }
+        /// <summary>
+        /// 读取模版
+        /// </summary>
+        /// <returns></returns>
+        private DataTable readExcel()
+        {
+            string Path = "";
+            DataTable dt = new DataTable();
+            OpenFileDialog fileDialog1 = new OpenFileDialog();
+            fileDialog1.InitialDirectory = "C:\\";//默认打开C：
+            fileDialog1.Filter = "Excel files (*.xls)|*.xls|Excel files (*.xlsx)|*.xls";
+            fileDialog1.FilterIndex = 1;//如果您设置 FilterIndex 属性，则当显示对话框时，将选择该筛选器。
+            fileDialog1.RestoreDirectory = true;//取得或设定值，指出对话方块是否在关闭前还原目前的目录。
+            if (fileDialog1.ShowDialog() == DialogResult.OK)
+            {
+                //Bitmap bitmap = new Bitmap(fileDialog1.FileName);// fileDialog1.FileName显示选中文件的路径
+                Path = fileDialog1.FileName;
+                //picGPS.Image = bitmap;
+            }
+            else
+            {
+                //MessageBox.Show("");
+                return dt;
+
+            }
+            if (Path == "")
+                return dt;
+
+            
+            try
+            {
+                string strConn = "Provider=Microsoft.Jet.OLEDB.4.0;" + "Data Source=" + Path + ";" + "Extended Properties=Excel 8.0;";
+                OleDbConnection conn = new OleDbConnection(strConn);
+                conn.Open();
+                DataTable schemaTable = conn.GetOleDbSchemaTable(System.Data.OleDb.OleDbSchemaGuid.Tables, null);
+                string tableName = schemaTable.Rows[0][2].ToString().Trim();
+                string strExcel = "";
+                OleDbDataAdapter myCommand = null;
+                DataSet ds = null;
+                //strExcel = "select * from [sheet1$]";
+                strExcel = "select * from [" + tableName + "]";
+                myCommand = new OleDbDataAdapter(strExcel, strConn);
+                ds = new DataSet();
+                myCommand.Fill(ds, "table1");
+                dt = ds.Tables[0];
+            }
+            catch (OleDbException err)
+            {
+                XtraMessageBox.Show(err.Message);
+            }
+            return dt;
+        }
+
+
     }
 }

@@ -1,0 +1,127 @@
+E:\项目库\条码项目\乐凯医疗\源码\BarCode\BarCode\bin\Debug\Voucher\Allsoft.BarCode.JC.Print.pdb
+E:\项目库\条码项目\乐凯医疗\源码\BarCode\Allsoft.BarCode.JC.Print\obj\Debug\Allsoft.BarCode.JC.FrmCheckStock.resources
+E:\项目库\条码项目\乐凯医疗\源码\BarCode\Allsoft.BarCode.JC.Print\obj\Debug\Allsoft.BarCode.JC.FrmCutBarCodePrint.resources
+E:\项目库\条码项目\乐凯医疗\源码\BarCode\Allsoft.BarCode.JC.Print\obj\Debug\Allsoft.BarCode.JC.FrmCutProductPlan.resources
+E:\项目库\条码项目\乐凯医疗\源码\BarCode\Allsoft.BarCode.JC.Print\obj\Debug\Allsoft.BarCode.JC.Print.Properties.Resources.resources
+E:\项目库\条码项目\乐凯医疗\源码\BarCode\Allsoft.BarCode.JC.Print\obj\Debug\Allsoft.BarCode.JC.Print.csproj.GenerateResource.Cache
+E:\项目库\条码项目\乐凯医疗\源码\BarCode\Allsoft.BarCode.JC.Print\obj\Debug\Allsoft.BarCode.JC.Print.pdb
+E:\项目库\条码项目\乐凯医疗\源码\BarCode\Allsoft.BarCode.JC.Print\obj\Debug\Allsoft.BarCode.JC.FrmProductPlaning.resources
+E:\项目库\条码项目\乐凯医疗\源码\BarCode\Allsoft.BarCode.JC.Print\obj\Debug\Allsoft.BarCode.JC.FrmBigBarCodePrint.resources
+E:\项目库\条码项目\乐凯医疗\源码\BarCode\Allsoft.BarCode.JC.Print\obj\Debug\Allsoft.BarCode.JC.FrmBigBarCodePrintList.resources
+E:\项目库\条码项目\乐凯医疗\源码\BarCode\Allsoft.BarCode.JC.Print\obj\Debug\Allsoft.BarCode.JC.FrmTuoPanPrint.resources
+E:\项目库\条码项目\乐凯医疗\源码\BarCode\Allsoft.BarCode.JC.Print\obj\Debug\Allsoft.BarCode.JC.FrmProductPlaningList.resources
+E:\项目库\条码项目\乐凯医疗\源码\BarCode\Allsoft.BarCode.JC.Print\bin\Allsoft.BarCode.JC.Print.exe
+E:\项目库\条码项目\乐凯医疗\源码\BarCode\Allsoft.BarCode.JC.Print\bin\Allsoft.BarCode.JC.Print.pdb
+E:\项目库\条码项目\乐凯医疗\源码\BarCode\BarCode\bin\Debug\Voucher\Allsoft.BarCode.JC.Print.dll
+E:\项目库\条码项目\乐凯医疗\源码\BarCode\Allsoft.BarCode.JC.Print\obj\Debug\Allsoft.BarCode.JC.Print.dll.licenses
+E:\项目库\条码项目\乐凯医疗\源码\BarCode\Allsoft.BarCode.JC.Print\obj\Debug\Allsoft.BarCode.JC.Print.dll
+C:\Users\LXM\Documents\Visual Studio 2015\Projects\BarCode\BarCode\bin\Debug\Voucher\Allsoft.BarCode.JC.Print.exe
+C:\Users\LXM\Documents\Visual Studio 2015\Projects\BarCode\BarCode\bin\Debug\Voucher\Allsoft.BarCode.JC.Print.pdb
+C:\Users\LXM\Documents\Visual Studio 2015\Projects\BarCode\Allsoft.BarCode.JC.Print\bin\Debug\Allsoft.BarCode.JC.Print.exe.config
+C:\Users\LXM\Documents\Visual Studio 2015\Projects\BarCode\Allsoft.BarCode.JC.Print\obj\Debug\Allsoft.BarCode.JC.Print.csproj.ResolveComReference.cache
+C:\Users\LXM\Documents\Visual Studio 2015\Projects\BarCode\Allsoft.BarCode.JC.Print\bin\Debug\Label\BigBarCode.mb
+C:\Users\LXM\Documents\Visual Studio 2015\Projects\BarCode\Allsoft.BarCode.JC.Print\bin\Debug\Label\CutPlan.mb
+C:\Users\LXM\Documents\Visual Studio 2015\Projects\BarCode\Allsoft.BarCode.JC.Print\bin\Debug\Label\PlaningTable.mb
+C:\Users\LXM\Documents\Visual Studio 2015\Projects\BarCode\Allsoft.BarCode.JC.Print\bin\Debug\Label\PlanList.mb
+C:\Users\LXM\Documents\Visual Studio 2015\Projects\BarCode\Allsoft.BarCode.JC.Print\bin\Debug\Allsoft.BarCode.JC.Print.exe
+C:\Users\LXM\Documents\Visual Studio 2015\Projects\BarCode\Allsoft.BarCode.JC.Print\bin\Debug\Allsoft.BarCode.JC.Print.pdb
+C:\Users\LXM\Documents\Visual Studio 2015\Projects\BarCode\Allsoft.BarCode.JC.Print\bin\Debug\BaseForm.dll
+C:\Users\LXM\Documents\Visual Studio 2015\Projects\BarCode\Allsoft.BarCode.JC.Print\bin\Debug\DevExpress.BonusSkins.v17.1.dll
+C:\Users\LXM\Documents\Visual Studio 2015\Projects\BarCode\Allsoft.BarCode.JC.Print\bin\Debug\DevExpress.Data.v17.1.dll
+C:\Users\LXM\Documents\Visual Studio 2015\Projects\BarCode\Allsoft.BarCode.JC.Print\bin\Debug\DevExpress.Printing.v17.1.Core.dll
+C:\Users\LXM\Documents\Visual Studio 2015\Projects\BarCode\Allsoft.BarCode.JC.Print\bin\Debug\DevExpress.Sparkline.v17.1.Core.dll
+C:\Users\LXM\Documents\Visual Studio 2015\Projects\BarCode\Allsoft.BarCode.JC.Print\bin\Debug\DevExpress.Utils.v17.1.dll
+C:\Users\LXM\Documents\Visual Studio 2015\Projects\BarCode\Allsoft.BarCode.JC.Print\bin\Debug\DevExpress.XtraBars.v17.1.dll
+C:\Users\LXM\Documents\Visual Studio 2015\Projects\BarCode\Allsoft.BarCode.JC.Print\bin\Debug\DevExpress.XtraEditors.v17.1.dll
+C:\Users\LXM\Documents\Visual Studio 2015\Projects\BarCode\Allsoft.BarCode.JC.Print\bin\Debug\DevExpress.XtraGrid.v17.1.dll
+C:\Users\LXM\Documents\Visual Studio 2015\Projects\BarCode\Allsoft.BarCode.JC.Print\bin\Debug\DotNetPrint.dll
+C:\Users\LXM\Documents\Visual Studio 2015\Projects\BarCode\Allsoft.BarCode.JC.Print\bin\Debug\itextsharp.dll
+C:\Users\LXM\Documents\Visual Studio 2015\Projects\BarCode\Allsoft.BarCode.JC.Print\bin\Debug\Pub.dll
+C:\Users\LXM\Documents\Visual Studio 2015\Projects\BarCode\Allsoft.BarCode.JC.Print\bin\Debug\zxing.dll
+C:\Users\LXM\Documents\Visual Studio 2015\Projects\BarCode\Allsoft.BarCode.JC.Print\bin\Debug\DevExpress.Pdf.v17.1.Core.dll
+C:\Users\LXM\Documents\Visual Studio 2015\Projects\BarCode\Allsoft.BarCode.JC.Print\bin\Debug\DevExpress.XtraLayout.v17.1.dll
+C:\Users\LXM\Documents\Visual Studio 2015\Projects\BarCode\Allsoft.BarCode.JC.Print\bin\Debug\DevExpress.XtraPrinting.v17.1.dll
+C:\Users\LXM\Documents\Visual Studio 2015\Projects\BarCode\Allsoft.BarCode.JC.Print\bin\Debug\NPOI.dll
+C:\Users\LXM\Documents\Visual Studio 2015\Projects\BarCode\Allsoft.BarCode.JC.Print\bin\Debug\DevExpress.RichEdit.v17.1.Core.dll
+C:\Users\LXM\Documents\Visual Studio 2015\Projects\BarCode\Allsoft.BarCode.JC.Print\bin\Debug\DevExpress.XtraTreeList.v17.1.dll
+C:\Users\LXM\Documents\Visual Studio 2015\Projects\BarCode\Allsoft.BarCode.JC.Print\bin\Debug\DevExpress.Office.v17.1.Core.dll
+C:\Users\LXM\Documents\Visual Studio 2015\Projects\BarCode\Allsoft.BarCode.JC.Print\bin\Debug\BaseForm.pdb
+C:\Users\LXM\Documents\Visual Studio 2015\Projects\BarCode\Allsoft.BarCode.JC.Print\bin\Debug\DevExpress.Data.v17.1.xml
+C:\Users\LXM\Documents\Visual Studio 2015\Projects\BarCode\Allsoft.BarCode.JC.Print\bin\Debug\DevExpress.Utils.v17.1.xml
+C:\Users\LXM\Documents\Visual Studio 2015\Projects\BarCode\Allsoft.BarCode.JC.Print\bin\Debug\DevExpress.Sparkline.v17.1.Core.xml
+C:\Users\LXM\Documents\Visual Studio 2015\Projects\BarCode\Allsoft.BarCode.JC.Print\bin\Debug\DevExpress.XtraBars.v17.1.xml
+C:\Users\LXM\Documents\Visual Studio 2015\Projects\BarCode\Allsoft.BarCode.JC.Print\bin\Debug\DevExpress.XtraEditors.v17.1.xml
+C:\Users\LXM\Documents\Visual Studio 2015\Projects\BarCode\Allsoft.BarCode.JC.Print\bin\Debug\DevExpress.Printing.v17.1.Core.xml
+C:\Users\LXM\Documents\Visual Studio 2015\Projects\BarCode\Allsoft.BarCode.JC.Print\bin\Debug\DevExpress.XtraGrid.v17.1.xml
+C:\Users\LXM\Documents\Visual Studio 2015\Projects\BarCode\Allsoft.BarCode.JC.Print\bin\Debug\DotNetPrint.xml
+C:\Users\LXM\Documents\Visual Studio 2015\Projects\BarCode\Allsoft.BarCode.JC.Print\bin\Debug\DevExpress.Pdf.v17.1.Core.xml
+C:\Users\LXM\Documents\Visual Studio 2015\Projects\BarCode\Allsoft.BarCode.JC.Print\bin\Debug\DevExpress.XtraLayout.v17.1.xml
+C:\Users\LXM\Documents\Visual Studio 2015\Projects\BarCode\Allsoft.BarCode.JC.Print\bin\Debug\DevExpress.XtraPrinting.v17.1.xml
+C:\Users\LXM\Documents\Visual Studio 2015\Projects\BarCode\Allsoft.BarCode.JC.Print\bin\Debug\DevExpress.RichEdit.v17.1.Core.xml
+C:\Users\LXM\Documents\Visual Studio 2015\Projects\BarCode\Allsoft.BarCode.JC.Print\bin\Debug\DevExpress.XtraTreeList.v17.1.xml
+C:\Users\LXM\Documents\Visual Studio 2015\Projects\BarCode\Allsoft.BarCode.JC.Print\bin\Debug\DevExpress.Office.v17.1.Core.xml
+C:\Users\LXM\Documents\Visual Studio 2015\Projects\BarCode\Allsoft.BarCode.JC.Print\bin\Debug\de\DevExpress.Data.v17.1.resources.dll
+C:\Users\LXM\Documents\Visual Studio 2015\Projects\BarCode\Allsoft.BarCode.JC.Print\bin\Debug\es\DevExpress.Data.v17.1.resources.dll
+C:\Users\LXM\Documents\Visual Studio 2015\Projects\BarCode\Allsoft.BarCode.JC.Print\bin\Debug\ja\DevExpress.Data.v17.1.resources.dll
+C:\Users\LXM\Documents\Visual Studio 2015\Projects\BarCode\Allsoft.BarCode.JC.Print\bin\Debug\ru\DevExpress.Data.v17.1.resources.dll
+C:\Users\LXM\Documents\Visual Studio 2015\Projects\BarCode\Allsoft.BarCode.JC.Print\bin\Debug\de\DevExpress.Utils.v17.1.resources.dll
+C:\Users\LXM\Documents\Visual Studio 2015\Projects\BarCode\Allsoft.BarCode.JC.Print\bin\Debug\es\DevExpress.Utils.v17.1.resources.dll
+C:\Users\LXM\Documents\Visual Studio 2015\Projects\BarCode\Allsoft.BarCode.JC.Print\bin\Debug\ja\DevExpress.Utils.v17.1.resources.dll
+C:\Users\LXM\Documents\Visual Studio 2015\Projects\BarCode\Allsoft.BarCode.JC.Print\bin\Debug\ru\DevExpress.Utils.v17.1.resources.dll
+C:\Users\LXM\Documents\Visual Studio 2015\Projects\BarCode\Allsoft.BarCode.JC.Print\bin\Debug\de\DevExpress.Sparkline.v17.1.Core.resources.dll
+C:\Users\LXM\Documents\Visual Studio 2015\Projects\BarCode\Allsoft.BarCode.JC.Print\bin\Debug\es\DevExpress.Sparkline.v17.1.Core.resources.dll
+C:\Users\LXM\Documents\Visual Studio 2015\Projects\BarCode\Allsoft.BarCode.JC.Print\bin\Debug\ja\DevExpress.Sparkline.v17.1.Core.resources.dll
+C:\Users\LXM\Documents\Visual Studio 2015\Projects\BarCode\Allsoft.BarCode.JC.Print\bin\Debug\ru\DevExpress.Sparkline.v17.1.Core.resources.dll
+C:\Users\LXM\Documents\Visual Studio 2015\Projects\BarCode\Allsoft.BarCode.JC.Print\bin\Debug\de\DevExpress.XtraBars.v17.1.resources.dll
+C:\Users\LXM\Documents\Visual Studio 2015\Projects\BarCode\Allsoft.BarCode.JC.Print\bin\Debug\es\DevExpress.XtraBars.v17.1.resources.dll
+C:\Users\LXM\Documents\Visual Studio 2015\Projects\BarCode\Allsoft.BarCode.JC.Print\bin\Debug\ja\DevExpress.XtraBars.v17.1.resources.dll
+C:\Users\LXM\Documents\Visual Studio 2015\Projects\BarCode\Allsoft.BarCode.JC.Print\bin\Debug\ru\DevExpress.XtraBars.v17.1.resources.dll
+C:\Users\LXM\Documents\Visual Studio 2015\Projects\BarCode\Allsoft.BarCode.JC.Print\bin\Debug\de\DevExpress.XtraEditors.v17.1.resources.dll
+C:\Users\LXM\Documents\Visual Studio 2015\Projects\BarCode\Allsoft.BarCode.JC.Print\bin\Debug\es\DevExpress.XtraEditors.v17.1.resources.dll
+C:\Users\LXM\Documents\Visual Studio 2015\Projects\BarCode\Allsoft.BarCode.JC.Print\bin\Debug\ja\DevExpress.XtraEditors.v17.1.resources.dll
+C:\Users\LXM\Documents\Visual Studio 2015\Projects\BarCode\Allsoft.BarCode.JC.Print\bin\Debug\ru\DevExpress.XtraEditors.v17.1.resources.dll
+C:\Users\LXM\Documents\Visual Studio 2015\Projects\BarCode\Allsoft.BarCode.JC.Print\bin\Debug\de\DevExpress.Printing.v17.1.Core.resources.dll
+C:\Users\LXM\Documents\Visual Studio 2015\Projects\BarCode\Allsoft.BarCode.JC.Print\bin\Debug\es\DevExpress.Printing.v17.1.Core.resources.dll
+C:\Users\LXM\Documents\Visual Studio 2015\Projects\BarCode\Allsoft.BarCode.JC.Print\bin\Debug\ja\DevExpress.Printing.v17.1.Core.resources.dll
+C:\Users\LXM\Documents\Visual Studio 2015\Projects\BarCode\Allsoft.BarCode.JC.Print\bin\Debug\ru\DevExpress.Printing.v17.1.Core.resources.dll
+C:\Users\LXM\Documents\Visual Studio 2015\Projects\BarCode\Allsoft.BarCode.JC.Print\bin\Debug\de\DevExpress.XtraGrid.v17.1.resources.dll
+C:\Users\LXM\Documents\Visual Studio 2015\Projects\BarCode\Allsoft.BarCode.JC.Print\bin\Debug\es\DevExpress.XtraGrid.v17.1.resources.dll
+C:\Users\LXM\Documents\Visual Studio 2015\Projects\BarCode\Allsoft.BarCode.JC.Print\bin\Debug\ja\DevExpress.XtraGrid.v17.1.resources.dll
+C:\Users\LXM\Documents\Visual Studio 2015\Projects\BarCode\Allsoft.BarCode.JC.Print\bin\Debug\ru\DevExpress.XtraGrid.v17.1.resources.dll
+C:\Users\LXM\Documents\Visual Studio 2015\Projects\BarCode\Allsoft.BarCode.JC.Print\bin\Debug\de\DevExpress.Pdf.v17.1.Core.resources.dll
+C:\Users\LXM\Documents\Visual Studio 2015\Projects\BarCode\Allsoft.BarCode.JC.Print\bin\Debug\es\DevExpress.Pdf.v17.1.Core.resources.dll
+C:\Users\LXM\Documents\Visual Studio 2015\Projects\BarCode\Allsoft.BarCode.JC.Print\bin\Debug\ja\DevExpress.Pdf.v17.1.Core.resources.dll
+C:\Users\LXM\Documents\Visual Studio 2015\Projects\BarCode\Allsoft.BarCode.JC.Print\bin\Debug\ru\DevExpress.Pdf.v17.1.Core.resources.dll
+C:\Users\LXM\Documents\Visual Studio 2015\Projects\BarCode\Allsoft.BarCode.JC.Print\bin\Debug\de\DevExpress.XtraLayout.v17.1.resources.dll
+C:\Users\LXM\Documents\Visual Studio 2015\Projects\BarCode\Allsoft.BarCode.JC.Print\bin\Debug\es\DevExpress.XtraLayout.v17.1.resources.dll
+C:\Users\LXM\Documents\Visual Studio 2015\Projects\BarCode\Allsoft.BarCode.JC.Print\bin\Debug\ja\DevExpress.XtraLayout.v17.1.resources.dll
+C:\Users\LXM\Documents\Visual Studio 2015\Projects\BarCode\Allsoft.BarCode.JC.Print\bin\Debug\ru\DevExpress.XtraLayout.v17.1.resources.dll
+C:\Users\LXM\Documents\Visual Studio 2015\Projects\BarCode\Allsoft.BarCode.JC.Print\bin\Debug\de\DevExpress.XtraPrinting.v17.1.resources.dll
+C:\Users\LXM\Documents\Visual Studio 2015\Projects\BarCode\Allsoft.BarCode.JC.Print\bin\Debug\es\DevExpress.XtraPrinting.v17.1.resources.dll
+C:\Users\LXM\Documents\Visual Studio 2015\Projects\BarCode\Allsoft.BarCode.JC.Print\bin\Debug\ja\DevExpress.XtraPrinting.v17.1.resources.dll
+C:\Users\LXM\Documents\Visual Studio 2015\Projects\BarCode\Allsoft.BarCode.JC.Print\bin\Debug\ru\DevExpress.XtraPrinting.v17.1.resources.dll
+C:\Users\LXM\Documents\Visual Studio 2015\Projects\BarCode\Allsoft.BarCode.JC.Print\bin\Debug\de\DevExpress.RichEdit.v17.1.Core.resources.dll
+C:\Users\LXM\Documents\Visual Studio 2015\Projects\BarCode\Allsoft.BarCode.JC.Print\bin\Debug\es\DevExpress.RichEdit.v17.1.Core.resources.dll
+C:\Users\LXM\Documents\Visual Studio 2015\Projects\BarCode\Allsoft.BarCode.JC.Print\bin\Debug\ja\DevExpress.RichEdit.v17.1.Core.resources.dll
+C:\Users\LXM\Documents\Visual Studio 2015\Projects\BarCode\Allsoft.BarCode.JC.Print\bin\Debug\ru\DevExpress.RichEdit.v17.1.Core.resources.dll
+C:\Users\LXM\Documents\Visual Studio 2015\Projects\BarCode\Allsoft.BarCode.JC.Print\bin\Debug\de\DevExpress.XtraTreeList.v17.1.resources.dll
+C:\Users\LXM\Documents\Visual Studio 2015\Projects\BarCode\Allsoft.BarCode.JC.Print\bin\Debug\es\DevExpress.XtraTreeList.v17.1.resources.dll
+C:\Users\LXM\Documents\Visual Studio 2015\Projects\BarCode\Allsoft.BarCode.JC.Print\bin\Debug\ja\DevExpress.XtraTreeList.v17.1.resources.dll
+C:\Users\LXM\Documents\Visual Studio 2015\Projects\BarCode\Allsoft.BarCode.JC.Print\bin\Debug\ru\DevExpress.XtraTreeList.v17.1.resources.dll
+C:\Users\LXM\Documents\Visual Studio 2015\Projects\BarCode\Allsoft.BarCode.JC.Print\bin\Debug\de\DevExpress.Office.v17.1.Core.resources.dll
+C:\Users\LXM\Documents\Visual Studio 2015\Projects\BarCode\Allsoft.BarCode.JC.Print\bin\Debug\es\DevExpress.Office.v17.1.Core.resources.dll
+C:\Users\LXM\Documents\Visual Studio 2015\Projects\BarCode\Allsoft.BarCode.JC.Print\bin\Debug\ja\DevExpress.Office.v17.1.Core.resources.dll
+C:\Users\LXM\Documents\Visual Studio 2015\Projects\BarCode\Allsoft.BarCode.JC.Print\bin\Debug\ru\DevExpress.Office.v17.1.Core.resources.dll
+C:\Users\LXM\Documents\Visual Studio 2015\Projects\BarCode\Allsoft.BarCode.JC.Print\obj\Debug\Allsoft.BarCode.JC.Print.csprojResolveAssemblyReference.cache
+C:\Users\LXM\Documents\Visual Studio 2015\Projects\BarCode\Allsoft.BarCode.JC.Print\obj\Debug\Allsoft.BarCode.JC.FrmBigBarCodePrint.resources
+C:\Users\LXM\Documents\Visual Studio 2015\Projects\BarCode\Allsoft.BarCode.JC.Print\obj\Debug\Allsoft.BarCode.JC.FrmBigBarCodePrintList.resources
+C:\Users\LXM\Documents\Visual Studio 2015\Projects\BarCode\Allsoft.BarCode.JC.Print\obj\Debug\Allsoft.BarCode.JC.FrmCheckStock.resources
+C:\Users\LXM\Documents\Visual Studio 2015\Projects\BarCode\Allsoft.BarCode.JC.Print\obj\Debug\Allsoft.BarCode.JC.FrmCutBarCodePrint.resources
+C:\Users\LXM\Documents\Visual Studio 2015\Projects\BarCode\Allsoft.BarCode.JC.Print\obj\Debug\Allsoft.BarCode.JC.FrmCutProductPlan.resources
+C:\Users\LXM\Documents\Visual Studio 2015\Projects\BarCode\Allsoft.BarCode.JC.Print\obj\Debug\Allsoft.BarCode.JC.FrmProductPlaning.resources
+C:\Users\LXM\Documents\Visual Studio 2015\Projects\BarCode\Allsoft.BarCode.JC.Print\obj\Debug\Allsoft.BarCode.JC.FrmProductPlaningList.resources
+C:\Users\LXM\Documents\Visual Studio 2015\Projects\BarCode\Allsoft.BarCode.JC.Print\obj\Debug\Allsoft.BarCode.JC.FrmTuoPanPrint.resources
+C:\Users\LXM\Documents\Visual Studio 2015\Projects\BarCode\Allsoft.BarCode.JC.Print\obj\Debug\Allsoft.BarCode.JC.Print.Properties.Resources.resources
+C:\Users\LXM\Documents\Visual Studio 2015\Projects\BarCode\Allsoft.BarCode.JC.Print\obj\Debug\Allsoft.BarCode.JC.Print.csproj.GenerateResource.Cache
+C:\Users\LXM\Documents\Visual Studio 2015\Projects\BarCode\Allsoft.BarCode.JC.Print\obj\Debug\Allsoft.BarCode.JC.Print.exe
+C:\Users\LXM\Documents\Visual Studio 2015\Projects\BarCode\Allsoft.BarCode.JC.Print\obj\Debug\Allsoft.BarCode.JC.Print.pdb

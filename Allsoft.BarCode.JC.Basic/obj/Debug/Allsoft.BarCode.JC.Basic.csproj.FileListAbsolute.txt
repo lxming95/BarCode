@@ -1,0 +1,17 @@
+E:\项目库\条码项目\乐凯医疗\源码\BarCode\BarCode\bin\Debug\Voucher\Allsoft.BarCode.JC.Basic.dll.config
+E:\项目库\条码项目\乐凯医疗\源码\BarCode\BarCode\bin\Debug\Voucher\Allsoft.BarCode.JC.Basic.dll
+E:\项目库\条码项目\乐凯医疗\源码\BarCode\BarCode\bin\Debug\Voucher\Allsoft.BarCode.JC.Basic.pdb
+E:\项目库\条码项目\乐凯医疗\源码\BarCode\Allsoft.BarCode.JC.Basic\obj\Debug\Allsoft.BarCode.JC.FrmNoteList.resources
+E:\项目库\条码项目\乐凯医疗\源码\BarCode\Allsoft.BarCode.JC.Basic\obj\Debug\Allsoft.BarCode.JC.FrmOldBearing.resources
+E:\项目库\条码项目\乐凯医疗\源码\BarCode\Allsoft.BarCode.JC.Basic\obj\Debug\Allsoft.BarCode.JC.FrmPlane.resources
+E:\项目库\条码项目\乐凯医疗\源码\BarCode\Allsoft.BarCode.JC.Basic\obj\Debug\Allsoft.BarCode.JC.FrmPlaneList.resources
+E:\项目库\条码项目\乐凯医疗\源码\BarCode\Allsoft.BarCode.JC.Basic\obj\Debug\Allsoft.BarCode.JC.FrmQurry.resources
+E:\项目库\条码项目\乐凯医疗\源码\BarCode\Allsoft.BarCode.JC.Basic\obj\Debug\Allsoft.BarCode.JC.FrmNote.resources
+E:\项目库\条码项目\乐凯医疗\源码\BarCode\Allsoft.BarCode.JC.Basic\obj\Debug\Allsoft.BarCode.JC.FrmSearch.resources
+E:\项目库\条码项目\乐凯医疗\源码\BarCode\Allsoft.BarCode.JC.Basic\obj\Debug\Allsoft.BarCode.JC.Basic.Properties.Resources.resources
+E:\项目库\条码项目\乐凯医疗\源码\BarCode\Allsoft.BarCode.JC.Basic\obj\Debug\Allsoft.BarCode.JC.Basic.csproj.GenerateResource.Cache
+E:\项目库\条码项目\乐凯医疗\源码\BarCode\Allsoft.BarCode.JC.Basic\obj\Debug\Allsoft.BarCode.JC.Basic.dll.licenses
+E:\项目库\条码项目\乐凯医疗\源码\BarCode\Allsoft.BarCode.JC.Basic\obj\Debug\Allsoft.BarCode.JC.Basic.dll
+E:\项目库\条码项目\乐凯医疗\源码\BarCode\Allsoft.BarCode.JC.Basic\obj\Debug\Allsoft.BarCode.JC.Basic.pdb
+E:\项目库\条码项目\乐凯医疗\源码\BarCode\Allsoft.BarCode.JC.Basic\obj\Debug\Allsoft.BarCode.JC.FrmOldBearingList.resources
+E:\项目库\条码项目\乐凯医疗\源码\BarCode\Allsoft.BarCode.JC.Basic\obj\Debug\Allsoft.BarCode.JC.Basic.csprojResolveAssemblyReference.cache

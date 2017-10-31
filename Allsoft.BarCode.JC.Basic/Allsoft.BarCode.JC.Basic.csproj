@@ -1,0 +1,176 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{12BD1B83-0CB4-413B-96B9-767FBF0C8066}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Allsoft.BarCode.JC.Basic</RootNamespace>
+    <AssemblyName>Allsoft.BarCode.JC.Basic</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+    <SccProjectName>
+    </SccProjectName>
+    <SccLocalPath>
+    </SccLocalPath>
+    <SccAuxPath>
+    </SccAuxPath>
+    <SccProvider>
+    </SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\BarCode\bin\Debug\Voucher\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="DevExpress.BonusSkins.v17.1" />
+    <Reference Include="DevExpress.Data.v17.1" />
+    <Reference Include="DevExpress.Utils.v17.1" />
+    <Reference Include="DevExpress.Sparkline.v17.1.Core" />
+    <Reference Include="DevExpress.XtraBars.v17.1, Version=17.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraEditors.v17.1" />
+    <Reference Include="DevExpress.Printing.v17.1.Core" />
+    <Reference Include="DevExpress.XtraGrid.v17.1, Version=17.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraLayout.v17.1, Version=17.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraPrinting.v17.1, Version=17.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="FrmNoteList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmNoteList.Designer.cs">
+      <DependentUpon>FrmNoteList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmOldBearing.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmOldBearing.Designer.cs">
+      <DependentUpon>FrmOldBearing.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmOldBearingList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmOldBearingList.Designer.cs">
+      <DependentUpon>FrmOldBearingList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmPlane.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmPlane.Designer.cs">
+      <DependentUpon>FrmPlane.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmPlaneList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmPlaneList.Designer.cs">
+      <DependentUpon>FrmPlaneList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmQurry.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmQurry.Designer.cs">
+      <DependentUpon>FrmQurry.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmNote.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmNote.Designer.cs">
+      <DependentUpon>FrmNote.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmSearch.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmSearch.Designer.cs">
+      <DependentUpon>FrmSearch.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="FrmNoteList.resx">
+      <DependentUpon>FrmNoteList.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmOldBearing.resx">
+      <DependentUpon>FrmOldBearing.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmOldBearingList.resx">
+      <DependentUpon>FrmOldBearingList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmPlane.resx">
+      <DependentUpon>FrmPlane.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmPlaneList.resx">
+      <DependentUpon>FrmPlaneList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmQurry.resx">
+      <DependentUpon>FrmQurry.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmNote.resx">
+      <DependentUpon>FrmNote.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmSearch.resx">
+      <DependentUpon>FrmSearch.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\licenses.licx" />
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="app.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

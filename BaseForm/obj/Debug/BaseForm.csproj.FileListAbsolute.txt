@@ -1,0 +1,24 @@
+E:\项目库\条码项目\乐凯医疗\源码\BarCode\BaseForm\obj\Debug\BaseForm.csprojResolveAssemblyReference.cache
+E:\项目库\条码项目\乐凯医疗\源码\BarCode\BaseForm\obj\Debug\BarCode.BaseForm.FrmBathModify.resources
+E:\项目库\条码项目\乐凯医疗\源码\BarCode\BaseForm\obj\Debug\BarCode.BaseForm.FrmFilter.resources
+E:\项目库\条码项目\乐凯医疗\源码\BarCode\BaseForm\obj\Debug\BarCode.BaseForm.FrmFilterSet.resources
+E:\项目库\条码项目\乐凯医疗\源码\BarCode\BaseForm\obj\Debug\BarCode.BaseForm.FrmRefB.resources
+E:\项目库\条码项目\乐凯医疗\源码\BarCode\BaseForm\obj\Debug\BarCode.BaseForm.FrmServerOpenDlg.resources
+E:\项目库\条码项目\乐凯医疗\源码\BarCode\BaseForm\obj\Debug\BarCode.BaseForm.FrmServerPath.resources
+E:\项目库\条码项目\乐凯医疗\源码\BarCode\BaseForm\obj\Debug\BarCode.BaseForm.FrmServerSaveDlg.resources
+E:\项目库\条码项目\乐凯医疗\源码\BarCode\BaseForm\obj\Debug\BaseForm.Properties.Resources.resources
+E:\项目库\条码项目\乐凯医疗\源码\BarCode\BaseForm\obj\Debug\BaseForm.csproj.GenerateResource.Cache
+E:\项目库\条码项目\乐凯医疗\源码\BarCode\BaseForm\obj\Debug\BaseForm.dll.licenses
+E:\项目库\条码项目\乐凯医疗\源码\BarCode\Lib\BaseForm.dll
+E:\项目库\条码项目\乐凯医疗\源码\BarCode\Lib\BaseForm.pdb
+E:\项目库\条码项目\乐凯医疗\源码\BarCode\BaseForm\obj\Debug\BaseForm.dll
+E:\项目库\条码项目\乐凯医疗\源码\BarCode\BaseForm\obj\Debug\BaseForm.pdb
+C:\Users\LXM\Documents\Visual Studio 2015\Projects\BarCode\Lib\BaseForm.dll
+C:\Users\LXM\Documents\Visual Studio 2015\Projects\BarCode\Lib\BaseForm.pdb
+C:\Users\LXM\Documents\Visual Studio 2015\Projects\BarCode\BaseForm\obj\Debug\BaseForm.csprojResolveAssemblyReference.cache
+C:\Users\LXM\Documents\Visual Studio 2015\Projects\BarCode\BaseForm\obj\Debug\BarCode.BaseForm.FrmRefB.resources
+C:\Users\LXM\Documents\Visual Studio 2015\Projects\BarCode\BaseForm\obj\Debug\BaseForm.Properties.Resources.resources
+C:\Users\LXM\Documents\Visual Studio 2015\Projects\BarCode\BaseForm\obj\Debug\BaseForm.csproj.GenerateResource.Cache
+C:\Users\LXM\Documents\Visual Studio 2015\Projects\BarCode\BaseForm\obj\Debug\BaseForm.dll.licenses
+C:\Users\LXM\Documents\Visual Studio 2015\Projects\BarCode\BaseForm\obj\Debug\BaseForm.dll
+C:\Users\LXM\Documents\Visual Studio 2015\Projects\BarCode\BaseForm\obj\Debug\BaseForm.pdb

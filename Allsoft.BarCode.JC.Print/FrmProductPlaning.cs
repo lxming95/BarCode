@@ -374,20 +374,20 @@ namespace Allsoft.BarCode.JC
                         new SqlParameter("@cWidth", dt.Rows[i]["cWidth"]),          //宽度
                         new SqlParameter("@cLength", dt.Rows[i]["cLength"]),        //长度
                         new SqlParameter("@iWindingNum", dt.Rows[i]["iWindingNum"]),//收卷轴数/计划轴数
-                        new SqlParameter("@cSpeed", dt.Rows[i]["cSpeed"]),          //车速
-                        new SqlParameter("@cCostTiem", dt.Rows[i]["cCostTiem"]),    //用时（小时）
+                        new SqlParameter("@iSpeed", dt.Rows[i]["iSpeed"]),          //车速
+                        new SqlParameter("@iCostTiem", dt.Rows[i]["iCostTiem"]),    //用时（小时）
                         new SqlParameter("@cSortModel", dt.Rows[i]["cSortModel"]),  //整理规格（宽*长）
                         new SqlParameter("@iSortNum", dt.Rows[i]["iSortNum"]),      //整理轴数
                         new SqlParameter("@cUse", dt.Rows[i]["cUse"]),              //用途
                         new SqlParameter("@cRequest", dt.Rows[i]["cRequest"]),      //要求
                         new SqlParameter("@cCustomer", dt.Rows[i]["cCustomer"]),    //客户
                         new SqlParameter("@cLayer", dt.Rows[i]["cLayer"]),          //涂层
-                        new SqlParameter("@cRequireThickness", dt.Rows[i]["cRequireThickness"]),          //生产要求厚度
-                        new SqlParameter("@cRequireWidth", dt.Rows[i]["cRequireWidth"]),                  //生产要求宽度
+                        new SqlParameter("@iRequireThickness", dt.Rows[i]["iRequireThickness"]),          //生产要求厚度
+                        new SqlParameter("@iRequireWidth", dt.Rows[i]["iRequireWidth"]),                  //生产要求宽度
                         new SqlParameter("@cPacking", dt.Rows[i]["cPacking"]),                            //包装方式
                         new SqlParameter("@cInspectionStandards", dt.Rows[i]["cInspectionStandards"]),    //检验标准
-                        new SqlParameter("@cTemperature", dt.Rows[i]["cTemperature"]),                    //温度
-                        new SqlParameter("@cHumidity", dt.Rows[i]["cHumidity"]),    //湿度
+                        new SqlParameter("@iTemperature", dt.Rows[i]["iTemperature"]),                    //温度
+                        new SqlParameter("@iHumidity", dt.Rows[i]["iHumidity"]),    //湿度
                         new SqlParameter("@cNotes", dt.Rows[i]["cNotes"]),          //记事
                         new SqlParameter("@cPackInf", dt.Rows[i]["cPackInf"]),      //包材信息
                         new SqlParameter("@cDocumentsNum", this.txtcode.Text)       //单据号
@@ -399,17 +399,17 @@ namespace Allsoft.BarCode.JC
                     #endregion
                     if (dt.Rows[i]["Pid"] == DBNull.Value)
                     {
-                        SqlHelper.ExecuteNonQuery("INSERT INTO Data_Planing(cSequence,dStartTime,cCode,cMachhine,cModelName,cThickness,cWidth,cLength,iWindingNum,cSpeed,cCostTiem,cSortModel,iSortNum,cUse,cRequest,cCustomer,cLayer,cRequireThickness,cRequireWidth,cPacking,cInspectionStandards,cTemperature,cHumidity,cNotes,cPackInf,cDocumentsNum)"
-                            + " VALUES(@cSequence,@dStartTime,@cCode,@cMachhine,@cModelName,@cThickness,@cWidth,@cLength,@iWindingNum,@cSpeed,@cCostTiem,@cSortModel,@iSortNum,@cUse,@cRequest,@cCustomer,@cLayer,@cRequireThickness,@cRequireWidth,@cPacking,@cInspectionStandards,@cTemperature,@cHumidity,@cNotes,@cPackInf,@cDocumentsNum)", param);
+                        SqlHelper.ExecuteNonQuery("INSERT INTO Data_Planing(cSequence,dStartTime,cCode,cMachhine,cModelName,cThickness,cWidth,cLength,iWindingNum,iSpeed,iCostTiem,cSortModel,iSortNum,cUse,cRequest,cCustomer,cLayer,iRequireThickness,iRequireWidth,cPacking,cInspectionStandards,iTemperature,iHumidity,cNotes,cPackInf,cDocumentsNum)"
+                            + " VALUES(@cSequence,@dStartTime,@cCode,@cMachhine,@cModelName,@cThickness,@cWidth,@cLength,@iWindingNum,@iSpeed,@iCostTiem,@cSortModel,@iSortNum,@cUse,@cRequest,@cCustomer,@cLayer,@iRequireThickness,@iRequireWidth,@cPacking,@cInspectionStandards,@iTemperature,@iHumidity,@cNotes,@cPackInf,@cDocumentsNum)", param);
                     }
                     else
                     {
                         SqlHelper.ExecuteNonQuery(" UPDATE Data_Planing SET cSequence=@cSequence,dStartTime=@dStartTime,cMachhine=@cMachhine,"
                             +"cModelName=@cModelName,cThickness=@cThickness,cWidth=@cWidth,cLength=@cLength,iWindingNum=@iWindingNum,"
-                            +"cSpeed=@cSpeed,cCostTiem=@cCostTiem,cSortModel=@cSortModel,iSortNum=@iSortNum,cUse=@cUse,"
-                            +"cRequest=@cRequest,cCustomer=@cCustomer,cLayer=@cLayer,cRequireThickness=@cRequireThickness,"
-                            +"cRequireWidth=@cRequireWidth,cPacking=@cPacking,cInspectionStandards=@cInspectionStandards,"
-                            +"cTemperature=@cTemperature,cHumidity=@cHumidity,cNotes=@cNotes,cPackInf=@cPackInf,cDocumentsNum=@cDocumentsNum"
+                            +"iSpeed=@iSpeed,iCostTiem=@iCostTiem,cSortModel=@cSortModel,iSortNum=@iSortNum,cUse=@cUse,"
+                            +"cRequest=@cRequest,cCustomer=@cCustomer,cLayer=@cLayer,iRequireThickness=@iRequireThickness,"
+                            +"iRequireWidth=@iRequireWidth,cPacking=@cPacking,cInspectionStandards=@cInspectionStandards,"
+                            +"iTemperature=@iTemperature,iHumidity=@iHumidity,cNotes=@cNotes,cPackInf=@cPackInf,cDocumentsNum=@cDocumentsNum"
                             +" WHERE cCode=@cCode", param);
                     }
                 }
@@ -629,13 +629,13 @@ namespace Allsoft.BarCode.JC
                 this.btnEdit.Enabled = false;
                 btnSave.Enabled = false;
                 btnDel.Enabled = false;
-                //btnAddTable.Enabled = false;
+                btnAddTable.Enabled = true;
                 btnRedo.Enabled = false;
                 btnCheck.Enabled = false;
                 btnUnapprove.Enabled = false;
                 btnPrint.Enabled = false;
                 btnCut.Enabled = false;
-                btnIn.Enabled = false;
+                //btnIn.Enabled = false;
             }
         }
         private void valueChanged()
@@ -683,25 +683,35 @@ namespace Allsoft.BarCode.JC
         private DataTable fromDTcolumns(DataTable dt)
         {
             
-            if (dt != null || dt.Rows.Count > 0)
+            if (dt != null &&dt.Rows.Count > 0)
             {
-                dt.Columns[1].ColumnName = "cUnit";
-                dt.Columns[2].ColumnName = "cName";
-                dt.Columns[3].ColumnName = "cCurrentJob";
-                dt.Columns[4].ColumnName = "cSex";
-                dt.Columns[5].ColumnName = "cNation";
-                dt.Columns[6].ColumnName = "cNativePlace";
-                dt.Columns[7].ColumnName = "dBirth_date";
-                dt.Columns[8].ColumnName = "dJoin_date";
-                dt.Columns[9].ColumnName = "dWorkDate";
-                dt.Columns[10].ColumnName = "cFull_timeEducation";
-                dt.Columns[11].ColumnName = "cFull_timeSchool";
-                dt.Columns[12].ColumnName = "cIn_serviceEducation";
-                dt.Columns[13].ColumnName = "cIn_serviceSchool";
-                dt.Columns[14].ColumnName = "cResume";
-                dt.Columns[15].ColumnName = "dInOffice";
-                dt.Columns[16].ColumnName = "dSameOffic";
-                dt.Columns[17].ColumnName = "cRemarks";
+                dt.Columns[0].ColumnName = "cSequence";     //序号
+                dt.Columns[1].ColumnName = "dStartTime";    //开始时间
+                dt.Columns[2].ColumnName = "cCode";         //工单号
+                dt.Columns[3].ColumnName = "cMachhine";     //收卷机
+                dt.Columns[4].ColumnName = "cModelName";    //型号
+                dt.Columns[5].ColumnName = "cThickness";    //厚度
+                dt.Columns[6].ColumnName = "cWidth";        //宽度
+                dt.Columns[7].ColumnName = "cLength";       //长度
+                dt.Columns[8].ColumnName = "iWindingtNum";  //收卷轴数/计划轴数
+                dt.Columns[9].ColumnName = "iSpeed";        //车速
+                dt.Columns[10].ColumnName = "iCostTiem";     //用时
+                dt.Columns[11].ColumnName = "cSortModel";   //整理规格
+                dt.Columns[12].ColumnName = "iSortNum";     //整理轴数
+                dt.Columns[13].ColumnName = "cUse";         //用途
+                dt.Columns[14].ColumnName = "cRequest";     //要求
+                dt.Columns[15].ColumnName = "cCustomer";    //客户
+                dt.Columns[16].ColumnName = "cLayer";       //涂层
+                dt.Columns[17].ColumnName = "iRequireThickness";//生产要求厚度
+                dt.Columns[18].ColumnName = "iRequireWidth";//生产要求宽度
+                dt.Columns[19].ColumnName = "cPacking";     //包装方式
+                dt.Columns[20].ColumnName = "cInspectionStandards"; //检验标准
+                dt.Columns[21].ColumnName = "iTemperature"; //温度
+                dt.Columns[22].ColumnName = "iHumidity";    //湿度
+                dt.Columns[23].ColumnName = "cNotes";       //记事
+                dt.Columns[24].ColumnName = "cPackInf";     //包材信息
+
+
             }
             return dt;
         }
@@ -712,17 +722,32 @@ namespace Allsoft.BarCode.JC
         private DataTable readExcel()
         {
             string Path = "";
+            string strConn = "";
             DataTable dt = new DataTable();
             OpenFileDialog fileDialog1 = new OpenFileDialog();
             fileDialog1.InitialDirectory = "C:\\";//默认打开C：
-            fileDialog1.Filter = "Excel files (*.xls)|*.xls|Excel files (*.xlsx)|*.xls";
+            fileDialog1.Filter = "Excel files (*.xlsx)|*.xlsx|Excel files (*.xls)|*.xls";
             fileDialog1.FilterIndex = 1;//如果您设置 FilterIndex 属性，则当显示对话框时，将选择该筛选器。
             fileDialog1.RestoreDirectory = true;//取得或设定值，指出对话方块是否在关闭前还原目前的目录。
             if (fileDialog1.ShowDialog() == DialogResult.OK)
             {
                 //Bitmap bitmap = new Bitmap(fileDialog1.FileName);// fileDialog1.FileName显示选中文件的路径
                 Path = fileDialog1.FileName;
-                //picGPS.Image = bitmap;
+                if (Path == "")
+                    return dt;
+                //picGPS.Image = bitmap;            
+                string fileExtenstion = new FileInfo(Path).Extension;   //读取后缀名
+                switch (fileExtenstion)                                 //判断文件类型
+                {
+                    case ".xls":
+                        strConn = "Provider=Microsoft.Jet.OLEDB.4.0;Data Source=" + Path + ";Extended Properties=Excel 8.0;HDR=Yes;IMEX=1;";        //.xls类型
+                        break;
+                    case ".xlsx":
+                        strConn = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=" + Path + ";Extended Properties='Excel 12.0;HDR=Yes;IMEX=1;'";         //.xlsx类型
+                        break;
+                    default:
+                        break;
+                }
             }
             else
             {
@@ -730,13 +755,9 @@ namespace Allsoft.BarCode.JC
                 return dt;
 
             }
-            if (Path == "")
-                return dt;
-
-            
             try
             {
-                string strConn = "Provider=Microsoft.Jet.OLEDB.4.0;" + "Data Source=" + Path + ";" + "Extended Properties=Excel 8.0;";
+                
                 OleDbConnection conn = new OleDbConnection(strConn);
                 conn.Open();
                 DataTable schemaTable = conn.GetOleDbSchemaTable(System.Data.OleDb.OleDbSchemaGuid.Tables, null);

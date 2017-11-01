@@ -20,13 +20,13 @@ namespace Allsoft.BarCode.JC.Print
             BonusSkins.Register();
             SkinManager.EnableFormSkins();
             UserLookAndFeel.Default.SetSkinStyle("DevExpress Style");
-            //Application.Run(new FrmProductPlaning());
+            Application.Run(new FrmProductPlaning());
             //Application.Run(new FrmProductPlaningList());
             //Application.Run(new FrmCutProductPlan("F321456"));
             //Application.Run(new FrmBigBarCodePrint());
             //Application.Run(new FrmBigBarCodePrintList());
             //Application.Run(new FrmCutBarCodePrint());
-            Application.Run(new FrmTuoPanPrint());
+            //Application.Run(new FrmTuoPanPrint());
         }
     }
 }

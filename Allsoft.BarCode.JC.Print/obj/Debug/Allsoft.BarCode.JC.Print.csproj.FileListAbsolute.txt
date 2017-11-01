@@ -17,12 +17,11 @@ E:\项目库\条码项目\乐凯医疗\源码\BarCode\Allsoft.BarCode.JC.Print\o
 E:\项目库\条码项目\乐凯医疗\源码\BarCode\Allsoft.BarCode.JC.Print\obj\Debug\Allsoft.BarCode.JC.Print.dll
 C:\Users\LXM\Documents\Visual Studio 2015\Projects\BarCode\BarCode\bin\Debug\Voucher\Allsoft.BarCode.JC.Print.exe
 C:\Users\LXM\Documents\Visual Studio 2015\Projects\BarCode\BarCode\bin\Debug\Voucher\Allsoft.BarCode.JC.Print.pdb
-C:\Users\LXM\Documents\Visual Studio 2015\Projects\BarCode\Allsoft.BarCode.JC.Print\bin\Debug\Allsoft.BarCode.JC.Print.exe.config
-C:\Users\LXM\Documents\Visual Studio 2015\Projects\BarCode\Allsoft.BarCode.JC.Print\obj\Debug\Allsoft.BarCode.JC.Print.csproj.ResolveComReference.cache
 C:\Users\LXM\Documents\Visual Studio 2015\Projects\BarCode\Allsoft.BarCode.JC.Print\bin\Debug\Label\BigBarCode.mb
 C:\Users\LXM\Documents\Visual Studio 2015\Projects\BarCode\Allsoft.BarCode.JC.Print\bin\Debug\Label\CutPlan.mb
 C:\Users\LXM\Documents\Visual Studio 2015\Projects\BarCode\Allsoft.BarCode.JC.Print\bin\Debug\Label\PlaningTable.mb
 C:\Users\LXM\Documents\Visual Studio 2015\Projects\BarCode\Allsoft.BarCode.JC.Print\bin\Debug\Label\PlanList.mb
+C:\Users\LXM\Documents\Visual Studio 2015\Projects\BarCode\Allsoft.BarCode.JC.Print\bin\Debug\Allsoft.BarCode.JC.Print.exe.config
 C:\Users\LXM\Documents\Visual Studio 2015\Projects\BarCode\Allsoft.BarCode.JC.Print\bin\Debug\Allsoft.BarCode.JC.Print.exe
 C:\Users\LXM\Documents\Visual Studio 2015\Projects\BarCode\Allsoft.BarCode.JC.Print\bin\Debug\Allsoft.BarCode.JC.Print.pdb
 C:\Users\LXM\Documents\Visual Studio 2015\Projects\BarCode\Allsoft.BarCode.JC.Print\bin\Debug\BaseForm.dll
@@ -113,6 +112,7 @@ C:\Users\LXM\Documents\Visual Studio 2015\Projects\BarCode\Allsoft.BarCode.JC.Pr
 C:\Users\LXM\Documents\Visual Studio 2015\Projects\BarCode\Allsoft.BarCode.JC.Print\bin\Debug\ja\DevExpress.Office.v17.1.Core.resources.dll
 C:\Users\LXM\Documents\Visual Studio 2015\Projects\BarCode\Allsoft.BarCode.JC.Print\bin\Debug\ru\DevExpress.Office.v17.1.Core.resources.dll
 C:\Users\LXM\Documents\Visual Studio 2015\Projects\BarCode\Allsoft.BarCode.JC.Print\obj\Debug\Allsoft.BarCode.JC.Print.csprojResolveAssemblyReference.cache
+C:\Users\LXM\Documents\Visual Studio 2015\Projects\BarCode\Allsoft.BarCode.JC.Print\obj\Debug\Allsoft.BarCode.JC.Print.csproj.ResolveComReference.cache
 C:\Users\LXM\Documents\Visual Studio 2015\Projects\BarCode\Allsoft.BarCode.JC.Print\obj\Debug\Allsoft.BarCode.JC.FrmBigBarCodePrint.resources
 C:\Users\LXM\Documents\Visual Studio 2015\Projects\BarCode\Allsoft.BarCode.JC.Print\obj\Debug\Allsoft.BarCode.JC.FrmBigBarCodePrintList.resources
 C:\Users\LXM\Documents\Visual Studio 2015\Projects\BarCode\Allsoft.BarCode.JC.Print\obj\Debug\Allsoft.BarCode.JC.FrmCheckStock.resources

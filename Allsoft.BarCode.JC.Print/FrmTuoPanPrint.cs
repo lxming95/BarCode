@@ -60,15 +60,16 @@ namespace Allsoft.BarCode.JC
 
             if (e.KeyCode == Keys.Enter)//如果输入的是回车键  
             {
-                if (isSafe(txtCode.Text))
+                string s = txtCode.Text.ToString();
+                if (isSafe(s))
                 {
                     DataTable dt = gcProdctList.DataSource as DataTable;
                     dt.Rows.Add();
                     dt.Rows[dt.Rows.Count-1]["cCode"] = txtCode.Text;
                     gcProdctList.DataSource = dt;
                 }
+                txtCode.Text = "";
             }
-            txtCode.Text = "";
         }
         /// <summary>
         /// 删行

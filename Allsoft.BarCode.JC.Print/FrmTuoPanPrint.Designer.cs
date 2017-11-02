@@ -46,10 +46,10 @@
             this.gcProdctList = new DevExpress.XtraGrid.GridControl();
             this.gvProdctList = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.cCode = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.txtCode = new DevExpress.XtraEditors.TextEdit();
             this.labelControl38 = new DevExpress.XtraEditors.LabelControl();
             this.delRow = new DevExpress.XtraEditors.SimpleButton();
             this.easyReport1 = new VBprinter.EasyReport(this.components);
+            this.txtCode = new DevExpress.XtraEditors.TextEdit();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtPrintPersion.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtPrintData.Properties.CalendarTimeProperties)).BeginInit();
@@ -222,16 +222,6 @@
             this.cCode.Visible = true;
             this.cCode.VisibleIndex = 0;
             // 
-            // txtCode
-            // 
-            this.txtCode.Location = new System.Drawing.Point(72, 63);
-            this.txtCode.Name = "txtCode";
-            this.txtCode.Properties.Appearance.Font = new System.Drawing.Font("宋体", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCode.Properties.Appearance.Options.UseFont = true;
-            this.txtCode.Size = new System.Drawing.Size(107, 20);
-            this.txtCode.TabIndex = 285;
-            this.txtCode.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtCode_KeyDown);
-            // 
             // labelControl38
             // 
             this.labelControl38.Appearance.Font = new System.Drawing.Font("宋体", 10.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
@@ -262,13 +252,22 @@
             this.easyReport1.OffsetX = 0F;
             this.easyReport1.OffsetY = 0F;
             // 
+            // txtCode
+            // 
+            this.txtCode.Location = new System.Drawing.Point(72, 63);
+            this.txtCode.MenuManager = this.barManager1;
+            this.txtCode.Name = "txtCode";
+            this.txtCode.Size = new System.Drawing.Size(100, 20);
+            this.txtCode.TabIndex = 291;
+            this.txtCode.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtCode_KeyDown);
+            // 
             // FrmTuoPanPrint
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(651, 321);
-            this.Controls.Add(this.delRow);
             this.Controls.Add(this.txtCode);
+            this.Controls.Add(this.delRow);
             this.Controls.Add(this.labelControl38);
             this.Controls.Add(this.gcProdctList);
             this.Controls.Add(this.txtPrintData);
@@ -311,10 +310,10 @@
         private DevExpress.XtraBars.BarButtonItem btnClear;
         private DevExpress.XtraGrid.GridControl gcProdctList;
         private DevExpress.XtraGrid.Views.Grid.GridView gvProdctList;
-        private DevExpress.XtraEditors.TextEdit txtCode;
         private DevExpress.XtraEditors.LabelControl labelControl38;
         private DevExpress.XtraEditors.SimpleButton delRow;
         private VBprinter.EasyReport easyReport1;
         private DevExpress.XtraGrid.Columns.GridColumn cCode;
+        private DevExpress.XtraEditors.TextEdit txtCode;
     }
 }

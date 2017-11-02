@@ -693,7 +693,7 @@ namespace Allsoft.BarCode.JC
                 dt.Columns[5].ColumnName = "cThickness";    //厚度
                 dt.Columns[6].ColumnName = "cWidth";        //宽度
                 dt.Columns[7].ColumnName = "cLength";       //长度
-                dt.Columns[8].ColumnName = "iWindingtNum";  //收卷轴数/计划轴数
+                dt.Columns[8].ColumnName = "iWindingNum";  //收卷轴数/计划轴数
                 dt.Columns[9].ColumnName = "iSpeed";        //车速
                 dt.Columns[10].ColumnName = "iCostTiem";     //用时
                 dt.Columns[11].ColumnName = "cSortModel";   //整理规格

@@ -61,10 +61,16 @@
             this.gvPlaning = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.cSequence = new DevExpress.XtraGrid.Columns.GridColumn();
             this.dStartTime = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.cCode = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.cMachhine = new DevExpress.XtraGrid.Columns.GridColumn();
             this.cModelName = new DevExpress.XtraGrid.Columns.GridColumn();
             this.btnModelName = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
+            this.cProductName = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.cProductCode = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.btnBigCode = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
+            this.cFProductName = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.cFProductCode = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.btnProductCode = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
+            this.cCode = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.cMachhine = new DevExpress.XtraGrid.Columns.GridColumn();
             this.cThickness = new DevExpress.XtraGrid.Columns.GridColumn();
             this.cWidth = new DevExpress.XtraGrid.Columns.GridColumn();
             this.cLength = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -88,7 +94,6 @@
             this.iHumidity = new DevExpress.XtraGrid.Columns.GridColumn();
             this.cNotes = new DevExpress.XtraGrid.Columns.GridColumn();
             this.cPackInf = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.btnProductCode = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
             this.cbMachhine = new DevExpress.XtraEditors.Repository.RepositoryItemComboBox();
             this.Machhine = new DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit();
             this.cbColor = new DevExpress.XtraEditors.Repository.RepositoryItemComboBox();
@@ -110,10 +115,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.gcPlaning)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvPlaning)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnModelName)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnBigCode)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnProductCode)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnCustomer)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cbLayer)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cbPacking)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnProductCode)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cbMachhine)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Machhine)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cbColor)).BeginInit();
@@ -449,7 +455,8 @@
             this.cbEmbossed,
             this.cbCorona,
             this.cbPacking,
-            this.btnModelName});
+            this.btnModelName,
+            this.btnBigCode});
             this.gcPlaning.Size = new System.Drawing.Size(1032, 318);
             this.gcPlaning.TabIndex = 139;
             this.gcPlaning.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
@@ -460,9 +467,13 @@
             this.gvPlaning.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
             this.cSequence,
             this.dStartTime,
+            this.cModelName,
+            this.cProductName,
+            this.cProductCode,
+            this.cFProductName,
+            this.cFProductCode,
             this.cCode,
             this.cMachhine,
-            this.cModelName,
             this.cThickness,
             this.cWidth,
             this.cLength,
@@ -505,7 +516,7 @@
             this.cSequence.Name = "cSequence";
             this.cSequence.Visible = true;
             this.cSequence.VisibleIndex = 0;
-            this.cSequence.Width = 80;
+            this.cSequence.Width = 81;
             // 
             // dStartTime
             // 
@@ -515,44 +526,13 @@
             this.dStartTime.AppearanceHeader.Options.UseTextOptions = true;
             this.dStartTime.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.dStartTime.AppearanceHeader.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
-            this.dStartTime.Caption = "开始时间";
+            this.dStartTime.Caption = "生产开始时间";
             this.dStartTime.FieldName = "dStartTime";
+            this.dStartTime.Fixed = DevExpress.XtraGrid.Columns.FixedStyle.Left;
             this.dStartTime.Name = "dStartTime";
             this.dStartTime.Visible = true;
-            this.dStartTime.VisibleIndex = 7;
-            this.dStartTime.Width = 76;
-            // 
-            // cCode
-            // 
-            this.cCode.AppearanceCell.Options.UseTextOptions = true;
-            this.cCode.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.cCode.AppearanceCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
-            this.cCode.AppearanceHeader.Options.UseTextOptions = true;
-            this.cCode.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.cCode.AppearanceHeader.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
-            this.cCode.Caption = "工单号";
-            this.cCode.FieldName = "cCode";
-            this.cCode.Fixed = DevExpress.XtraGrid.Columns.FixedStyle.Left;
-            this.cCode.Name = "cCode";
-            this.cCode.Visible = true;
-            this.cCode.VisibleIndex = 1;
-            this.cCode.Width = 59;
-            // 
-            // cMachhine
-            // 
-            this.cMachhine.AppearanceCell.Options.UseTextOptions = true;
-            this.cMachhine.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.cMachhine.AppearanceCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
-            this.cMachhine.AppearanceHeader.Options.UseTextOptions = true;
-            this.cMachhine.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.cMachhine.AppearanceHeader.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
-            this.cMachhine.Caption = "收卷机";
-            this.cMachhine.FieldName = "cMachhine";
-            this.cMachhine.Fixed = DevExpress.XtraGrid.Columns.FixedStyle.Left;
-            this.cMachhine.Name = "cMachhine";
-            this.cMachhine.Visible = true;
-            this.cMachhine.VisibleIndex = 2;
-            this.cMachhine.Width = 59;
+            this.dStartTime.VisibleIndex = 1;
+            this.dStartTime.Width = 82;
             // 
             // cModelName
             // 
@@ -568,8 +548,8 @@
             this.cModelName.Fixed = DevExpress.XtraGrid.Columns.FixedStyle.Left;
             this.cModelName.Name = "cModelName";
             this.cModelName.Visible = true;
-            this.cModelName.VisibleIndex = 3;
-            this.cModelName.Width = 47;
+            this.cModelName.VisibleIndex = 2;
+            this.cModelName.Width = 48;
             // 
             // btnModelName
             // 
@@ -578,6 +558,94 @@
             new DevExpress.XtraEditors.Controls.EditorButton()});
             this.btnModelName.Name = "btnModelName";
             this.btnModelName.Click += new System.EventHandler(this.btnModelName_Click);
+            // 
+            // cProductName
+            // 
+            this.cProductName.Caption = "大轴产品名称";
+            this.cProductName.FieldName = "cProductName";
+            this.cProductName.Fixed = DevExpress.XtraGrid.Columns.FixedStyle.Left;
+            this.cProductName.Name = "cProductName";
+            this.cProductName.Visible = true;
+            this.cProductName.VisibleIndex = 4;
+            this.cProductName.Width = 82;
+            // 
+            // cProductCode
+            // 
+            this.cProductCode.Caption = "大轴产品编码";
+            this.cProductCode.ColumnEdit = this.btnBigCode;
+            this.cProductCode.FieldName = "cProductCode";
+            this.cProductCode.Fixed = DevExpress.XtraGrid.Columns.FixedStyle.Left;
+            this.cProductCode.Name = "cProductCode";
+            this.cProductCode.Visible = true;
+            this.cProductCode.VisibleIndex = 3;
+            this.cProductCode.Width = 82;
+            // 
+            // btnBigCode
+            // 
+            this.btnBigCode.AutoHeight = false;
+            this.btnBigCode.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton()});
+            this.btnBigCode.Name = "btnBigCode";
+            this.btnBigCode.ButtonClick += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.btnBigCode_ButtonClick);
+            // 
+            // cFProductName
+            // 
+            this.cFProductName.Caption = "成品产品名称";
+            this.cFProductName.FieldName = "cFProductName";
+            this.cFProductName.Fixed = DevExpress.XtraGrid.Columns.FixedStyle.Left;
+            this.cFProductName.Name = "cFProductName";
+            this.cFProductName.Visible = true;
+            this.cFProductName.VisibleIndex = 6;
+            this.cFProductName.Width = 82;
+            // 
+            // cFProductCode
+            // 
+            this.cFProductCode.Caption = "成品产品编码";
+            this.cFProductCode.ColumnEdit = this.btnProductCode;
+            this.cFProductCode.FieldName = "cFProductCode";
+            this.cFProductCode.Fixed = DevExpress.XtraGrid.Columns.FixedStyle.Left;
+            this.cFProductCode.Name = "cFProductCode";
+            this.cFProductCode.Visible = true;
+            this.cFProductCode.VisibleIndex = 5;
+            this.cFProductCode.Width = 82;
+            // 
+            // btnProductCode
+            // 
+            this.btnProductCode.AutoHeight = false;
+            this.btnProductCode.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton()});
+            this.btnProductCode.Name = "btnProductCode";
+            this.btnProductCode.ButtonClick += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.btnProductCode_ButtonClick);
+            // 
+            // cCode
+            // 
+            this.cCode.AppearanceCell.Options.UseTextOptions = true;
+            this.cCode.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.cCode.AppearanceCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.cCode.AppearanceHeader.Options.UseTextOptions = true;
+            this.cCode.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.cCode.AppearanceHeader.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.cCode.Caption = "工单号";
+            this.cCode.FieldName = "cCode";
+            this.cCode.Name = "cCode";
+            this.cCode.Visible = true;
+            this.cCode.VisibleIndex = 7;
+            this.cCode.Width = 60;
+            // 
+            // cMachhine
+            // 
+            this.cMachhine.AppearanceCell.Options.UseTextOptions = true;
+            this.cMachhine.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.cMachhine.AppearanceCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.cMachhine.AppearanceHeader.Options.UseTextOptions = true;
+            this.cMachhine.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.cMachhine.AppearanceHeader.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.cMachhine.Caption = "收卷机";
+            this.cMachhine.FieldName = "cMachhine";
+            this.cMachhine.Name = "cMachhine";
+            this.cMachhine.Visible = true;
+            this.cMachhine.VisibleIndex = 8;
+            this.cMachhine.Width = 60;
             // 
             // cThickness
             // 
@@ -591,8 +659,8 @@
             this.cThickness.FieldName = "cThickness";
             this.cThickness.Name = "cThickness";
             this.cThickness.Visible = true;
-            this.cThickness.VisibleIndex = 12;
-            this.cThickness.Width = 76;
+            this.cThickness.VisibleIndex = 10;
+            this.cThickness.Width = 77;
             // 
             // cWidth
             // 
@@ -606,8 +674,8 @@
             this.cWidth.FieldName = "cWidth";
             this.cWidth.Name = "cWidth";
             this.cWidth.Visible = true;
-            this.cWidth.VisibleIndex = 11;
-            this.cWidth.Width = 76;
+            this.cWidth.VisibleIndex = 9;
+            this.cWidth.Width = 77;
             // 
             // cLength
             // 
@@ -621,8 +689,8 @@
             this.cLength.FieldName = "cLength";
             this.cLength.Name = "cLength";
             this.cLength.Visible = true;
-            this.cLength.VisibleIndex = 10;
-            this.cLength.Width = 76;
+            this.cLength.VisibleIndex = 11;
+            this.cLength.Width = 77;
             // 
             // iWindingNum
             // 
@@ -634,11 +702,10 @@
             this.iWindingNum.AppearanceHeader.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.iWindingNum.Caption = "收卷轴数";
             this.iWindingNum.FieldName = "iWindingNum";
-            this.iWindingNum.Fixed = DevExpress.XtraGrid.Columns.FixedStyle.Left;
             this.iWindingNum.Name = "iWindingNum";
             this.iWindingNum.Visible = true;
-            this.iWindingNum.VisibleIndex = 4;
-            this.iWindingNum.Width = 76;
+            this.iWindingNum.VisibleIndex = 12;
+            this.iWindingNum.Width = 77;
             // 
             // iSpeed
             // 
@@ -652,8 +719,8 @@
             this.iSpeed.FieldName = "iSpeed";
             this.iSpeed.Name = "iSpeed";
             this.iSpeed.Visible = true;
-            this.iSpeed.VisibleIndex = 8;
-            this.iSpeed.Width = 76;
+            this.iSpeed.VisibleIndex = 13;
+            this.iSpeed.Width = 77;
             // 
             // iCostTiem
             // 
@@ -667,8 +734,8 @@
             this.iCostTiem.FieldName = "iCostTiem";
             this.iCostTiem.Name = "iCostTiem";
             this.iCostTiem.Visible = true;
-            this.iCostTiem.VisibleIndex = 9;
-            this.iCostTiem.Width = 76;
+            this.iCostTiem.VisibleIndex = 14;
+            this.iCostTiem.Width = 77;
             // 
             // cSortModel
             // 
@@ -680,11 +747,10 @@
             this.cSortModel.AppearanceHeader.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.cSortModel.Caption = "整理规格";
             this.cSortModel.FieldName = "cSortModel";
-            this.cSortModel.Fixed = DevExpress.XtraGrid.Columns.FixedStyle.Left;
             this.cSortModel.Name = "cSortModel";
             this.cSortModel.Visible = true;
-            this.cSortModel.VisibleIndex = 5;
-            this.cSortModel.Width = 76;
+            this.cSortModel.VisibleIndex = 15;
+            this.cSortModel.Width = 77;
             // 
             // iSortNum
             // 
@@ -696,11 +762,10 @@
             this.iSortNum.AppearanceHeader.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.iSortNum.Caption = "整理轴数";
             this.iSortNum.FieldName = "iSortNum";
-            this.iSortNum.Fixed = DevExpress.XtraGrid.Columns.FixedStyle.Left;
             this.iSortNum.Name = "iSortNum";
             this.iSortNum.Visible = true;
-            this.iSortNum.VisibleIndex = 6;
-            this.iSortNum.Width = 76;
+            this.iSortNum.VisibleIndex = 16;
+            this.iSortNum.Width = 77;
             // 
             // cUse
             // 
@@ -714,8 +779,8 @@
             this.cUse.FieldName = "cUse";
             this.cUse.Name = "cUse";
             this.cUse.Visible = true;
-            this.cUse.VisibleIndex = 13;
-            this.cUse.Width = 76;
+            this.cUse.VisibleIndex = 17;
+            this.cUse.Width = 77;
             // 
             // cRequest
             // 
@@ -729,8 +794,8 @@
             this.cRequest.FieldName = "cRequest";
             this.cRequest.Name = "cRequest";
             this.cRequest.Visible = true;
-            this.cRequest.VisibleIndex = 14;
-            this.cRequest.Width = 76;
+            this.cRequest.VisibleIndex = 18;
+            this.cRequest.Width = 77;
             // 
             // cCustomer
             // 
@@ -745,8 +810,8 @@
             this.cCustomer.FieldName = "cCustomer";
             this.cCustomer.Name = "cCustomer";
             this.cCustomer.Visible = true;
-            this.cCustomer.VisibleIndex = 15;
-            this.cCustomer.Width = 76;
+            this.cCustomer.VisibleIndex = 19;
+            this.cCustomer.Width = 77;
             // 
             // btnCustomer
             // 
@@ -769,8 +834,8 @@
             this.cLayer.FieldName = "cLayer";
             this.cLayer.Name = "cLayer";
             this.cLayer.Visible = true;
-            this.cLayer.VisibleIndex = 16;
-            this.cLayer.Width = 76;
+            this.cLayer.VisibleIndex = 20;
+            this.cLayer.Width = 77;
             // 
             // cbLayer
             // 
@@ -791,8 +856,8 @@
             this.iRequireThickness.FieldName = "iRequireThickness";
             this.iRequireThickness.Name = "iRequireThickness";
             this.iRequireThickness.Visible = true;
-            this.iRequireThickness.VisibleIndex = 17;
-            this.iRequireThickness.Width = 82;
+            this.iRequireThickness.VisibleIndex = 21;
+            this.iRequireThickness.Width = 83;
             // 
             // iRequireWidth
             // 
@@ -806,8 +871,8 @@
             this.iRequireWidth.FieldName = "iRequireWidth";
             this.iRequireWidth.Name = "iRequireWidth";
             this.iRequireWidth.Visible = true;
-            this.iRequireWidth.VisibleIndex = 18;
-            this.iRequireWidth.Width = 82;
+            this.iRequireWidth.VisibleIndex = 22;
+            this.iRequireWidth.Width = 83;
             // 
             // cPacking
             // 
@@ -822,8 +887,8 @@
             this.cPacking.FieldName = "cPacking";
             this.cPacking.Name = "cPacking";
             this.cPacking.Visible = true;
-            this.cPacking.VisibleIndex = 19;
-            this.cPacking.Width = 76;
+            this.cPacking.VisibleIndex = 23;
+            this.cPacking.Width = 77;
             // 
             // cbPacking
             // 
@@ -844,8 +909,8 @@
             this.cInspectionStandards.FieldName = "cInspectionStandards";
             this.cInspectionStandards.Name = "cInspectionStandards";
             this.cInspectionStandards.Visible = true;
-            this.cInspectionStandards.VisibleIndex = 23;
-            this.cInspectionStandards.Width = 76;
+            this.cInspectionStandards.VisibleIndex = 24;
+            this.cInspectionStandards.Width = 77;
             // 
             // iTemperature
             // 
@@ -859,8 +924,8 @@
             this.iTemperature.FieldName = "iTemperature";
             this.iTemperature.Name = "iTemperature";
             this.iTemperature.Visible = true;
-            this.iTemperature.VisibleIndex = 21;
-            this.iTemperature.Width = 76;
+            this.iTemperature.VisibleIndex = 25;
+            this.iTemperature.Width = 77;
             // 
             // iHumidity
             // 
@@ -874,8 +939,8 @@
             this.iHumidity.FieldName = "iHumidity";
             this.iHumidity.Name = "iHumidity";
             this.iHumidity.Visible = true;
-            this.iHumidity.VisibleIndex = 22;
-            this.iHumidity.Width = 76;
+            this.iHumidity.VisibleIndex = 26;
+            this.iHumidity.Width = 77;
             // 
             // cNotes
             // 
@@ -889,8 +954,8 @@
             this.cNotes.FieldName = "cNotes";
             this.cNotes.Name = "cNotes";
             this.cNotes.Visible = true;
-            this.cNotes.VisibleIndex = 24;
-            this.cNotes.Width = 76;
+            this.cNotes.VisibleIndex = 27;
+            this.cNotes.Width = 77;
             // 
             // cPackInf
             // 
@@ -904,16 +969,8 @@
             this.cPackInf.FieldName = "cPackInf";
             this.cPackInf.Name = "cPackInf";
             this.cPackInf.Visible = true;
-            this.cPackInf.VisibleIndex = 20;
-            this.cPackInf.Width = 76;
-            // 
-            // btnProductCode
-            // 
-            this.btnProductCode.AutoHeight = false;
-            this.btnProductCode.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton()});
-            this.btnProductCode.Name = "btnProductCode";
-            this.btnProductCode.Click += new System.EventHandler(this.btnProductCode_Click);
+            this.cPackInf.VisibleIndex = 28;
+            this.cPackInf.Width = 77;
             // 
             // cbMachhine
             // 
@@ -1046,10 +1103,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.gcPlaning)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvPlaning)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnModelName)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnBigCode)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnProductCode)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnCustomer)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cbLayer)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cbPacking)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnProductCode)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cbMachhine)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Machhine)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cbColor)).EndInit();
@@ -1134,5 +1192,10 @@
         private DevExpress.XtraGrid.Columns.GridColumn iRequireWidth;
         private DevExpress.XtraGrid.Columns.GridColumn iTemperature;
         private DevExpress.XtraGrid.Columns.GridColumn iHumidity;
+        private DevExpress.XtraGrid.Columns.GridColumn cProductName;
+        private DevExpress.XtraGrid.Columns.GridColumn cProductCode;
+        private DevExpress.XtraGrid.Columns.GridColumn cFProductName;
+        private DevExpress.XtraGrid.Columns.GridColumn cFProductCode;
+        private DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit btnBigCode;
     }
 }

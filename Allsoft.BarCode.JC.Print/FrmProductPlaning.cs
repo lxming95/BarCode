@@ -65,9 +65,13 @@ namespace Allsoft.BarCode.JC
 
         private void FrmProductPlaning_Load(object sender, EventArgs e)
         {
-            SqlParameter[] param = new SqlParameter[] { new SqlParameter("@cDocumentsNum", this.txtcode.Text),};
-            DataTable dt = SqlHelper.Table("SELECT * FROM Data_Planing where cDocumentsNum=@cDocumentsNum",param);       //查询标签数据
-            gcPlaning.DataSource = dt;                                          //绑定数据源
+            if (this.txtcode.Text != "")
+            {
+                SqlParameter[] param = new SqlParameter[] { new SqlParameter("@cDocumentsNum", this.txtcode.Text), };
+                DataTable dt = SqlHelper.Table("SELECT * FROM Data_Planing where cDocumentsNum=@cDocumentsNum", param);       //查询标签数据
+                gcPlaning.DataSource = dt;                                          //绑定数据源
+
+            }
             //this.txtMakePsersion.Text = Pub.PubValue.UserName;
             start();
         }
@@ -79,7 +83,7 @@ namespace Allsoft.BarCode.JC
         private void simpleButton1_Click(object sender, EventArgs e)
         {
             this.gvPlaning.AddNewRow();
-            this.btnSave.Enabled = true;
+            //this.btnSave.Enabled = true;
             this.btnRedo.Enabled = true;
         }
         /// <summary>
@@ -90,7 +94,7 @@ namespace Allsoft.BarCode.JC
         private void simpleButton2_Click(object sender, EventArgs e)
         {
             this.gvPlaning.DeleteRow(this.gvPlaning.FocusedRowHandle);
-            this.btnSave.Enabled = true;
+            //this.btnSave.Enabled = true;
             this.btnRedo.Enabled = true;
             start();
         }
@@ -189,6 +193,8 @@ namespace Allsoft.BarCode.JC
                 XtraMessageBox.Show("已经审核，请勿重复提交");
                 return;
             }
+            this.txtCheckPsersion.Text = dt.Rows[0]["cCheck_person"].ToString();
+            this.txtCheckTime.Text = Convert.ToDateTime(dt.Rows[0]["dCheck_time"]).ToString("d");
             btnSave_ItemClick(sender,e);
             btnEdit.Enabled = false;
             btnDel.Enabled = false;
@@ -261,7 +267,7 @@ namespace Allsoft.BarCode.JC
             {
                 gvPlaning.OptionsBehavior.Editable = true;
                 edit = true;
-                this.btnSave.Enabled = true;
+                //this.btnSave.Enabled = true;
                 this.btnEdit.Enabled = false;
                 btnRedo.Enabled = true;
             }
@@ -319,6 +325,7 @@ namespace Allsoft.BarCode.JC
             this.btnSave.Enabled = false;
             this.btnEdit.Enabled = true;
             btnRedo.Enabled = false;
+            btnIn.Enabled = true;
             edit = false;
             start();
         }
@@ -370,6 +377,12 @@ namespace Allsoft.BarCode.JC
                         new SqlParameter("@cCode", dt.Rows[i]["cCode"]),            //工单号
                         new SqlParameter("@cMachhine", dt.Rows[i]["cMachhine"]),    //收卷机
                         new SqlParameter("@cModelName", dt.Rows[i]["cModelName"]),  //型号
+
+                        new SqlParameter("@cProductName", dt.Rows[i]["cProductName"]),  //大轴产品名称
+                        new SqlParameter("@cProductCode", dt.Rows[i]["cProductCode"]),  //大轴产品编码
+                        new SqlParameter("@cFProductName", dt.Rows[i]["cFProductName"]),//成品产品名称
+                        new SqlParameter("@cFProductCode", dt.Rows[i]["cFProductCode"]),//成品产品编码
+
                         new SqlParameter("@cThickness", dt.Rows[i]["cThickness"]),  //厚度
                         new SqlParameter("@cWidth", dt.Rows[i]["cWidth"]),          //宽度
                         new SqlParameter("@cLength", dt.Rows[i]["cLength"]),        //长度
@@ -397,20 +410,36 @@ namespace Allsoft.BarCode.JC
                          //new SqlParameter("@cRemarks", dt.Rows[i]["cRemarks"]),      //备注
                      };
                     #endregion
-                    if (dt.Rows[i]["Pid"] == DBNull.Value)
+                    DataTable dt_in = SqlHelper.Table("SELECT * FROM Data_Planing WHERE cCode=@cCode AND cMachhine=@cMachhine AND bDel=1  ", param);
+                    if (dt_in == null || dt_in.Rows.Count <= 0)            //数据第一次插入
                     {
-                        SqlHelper.ExecuteNonQuery("INSERT INTO Data_Planing(cSequence,dStartTime,cCode,cMachhine,cModelName,cThickness,cWidth,cLength,iWindingNum,iSpeed,iCostTiem,cSortModel,iSortNum,cUse,cRequest,cCustomer,cLayer,iRequireThickness,iRequireWidth,cPacking,cInspectionStandards,iTemperature,iHumidity,cNotes,cPackInf,cDocumentsNum)"
-                            + " VALUES(@cSequence,@dStartTime,@cCode,@cMachhine,@cModelName,@cThickness,@cWidth,@cLength,@iWindingNum,@iSpeed,@iCostTiem,@cSortModel,@iSortNum,@cUse,@cRequest,@cCustomer,@cLayer,@iRequireThickness,@iRequireWidth,@cPacking,@cInspectionStandards,@iTemperature,@iHumidity,@cNotes,@cPackInf,@cDocumentsNum)", param);
+                        //数据第一次插入
+                        SqlHelper.ExecuteNonQuery("INSERT INTO Data_Planing(cSequence,dStartTime,cCode,cMachhine,cModelName,cThickness,cWidth,cLength,iWindingNum,iSpeed,iCostTiem,cSortModel,iSortNum,cUse,cRequest,cCustomer,cLayer,iRequireThickness,iRequireWidth,cPacking,cInspectionStandards,iTemperature,iHumidity,cNotes,cPackInf,cDocumentsNum,cProductName,cProductCode,cFProductName,cFProductCode,bCPFinished,bBigFinished,iCPFinishedNum,iBigFinishedNum,bDel)"
+                            + " VALUES(@cSequence,@dStartTime,@cCode,@cMachhine,@cModelName,@cThickness,@cWidth,@cLength,@iWindingNum,@iSpeed,@iCostTiem,@cSortModel,@iSortNum,@cUse,@cRequest,@cCustomer,@cLayer,@iRequireThickness,@iRequireWidth,@cPacking,@cInspectionStandards,@iTemperature,@iHumidity,@cNotes,@cPackInf,@cDocumentsNum,@cProductName,@cProductCode,@cFProductName,@cFProductCode,'0','0','0','0','1')", param);
                     }
-                    else
+                    else                                             //数据已经存在于数据库
                     {
-                        SqlHelper.ExecuteNonQuery(" UPDATE Data_Planing SET cSequence=@cSequence,dStartTime=@dStartTime,cMachhine=@cMachhine,"
-                            +"cModelName=@cModelName,cThickness=@cThickness,cWidth=@cWidth,cLength=@cLength,iWindingNum=@iWindingNum,"
-                            +"iSpeed=@iSpeed,iCostTiem=@iCostTiem,cSortModel=@cSortModel,iSortNum=@iSortNum,cUse=@cUse,"
-                            +"cRequest=@cRequest,cCustomer=@cCustomer,cLayer=@cLayer,iRequireThickness=@iRequireThickness,"
-                            +"iRequireWidth=@iRequireWidth,cPacking=@cPacking,cInspectionStandards=@cInspectionStandards,"
-                            +"iTemperature=@iTemperature,iHumidity=@iHumidity,cNotes=@cNotes,cPackInf=@cPackInf,cDocumentsNum=@cDocumentsNum"
-                            +" WHERE cCode=@cCode", param);
+                        //数据更新，更新产品编码
+                        if ((dt_in.Rows[i]["cProductCode"] == DBNull.Value && dt.Rows[i]["cProductCode"] != DBNull.Value) || (dt_in.Rows[i]["cFProductCode"] == DBNull.Value && dt.Rows[i]["cFProductCode"] != DBNull.Value))
+                        {
+                            SqlHelper.ExecuteNonQuery(" UPDATE Data_Planing SET cSequence=@cSequence,dStartTime=@dStartTime,cMachhine=@cMachhine,"
+                                + "cModelName=@cModelName,cThickness=@cThickness,cWidth=@cWidth,cLength=@cLength,iWindingNum=@iWindingNum,"
+                                + "iSpeed=@iSpeed,iCostTiem=@iCostTiem,cSortModel=@cSortModel,iSortNum=@iSortNum,cUse=@cUse,"
+                                + "cRequest=@cRequest,cCustomer=@cCustomer,cLayer=@cLayer,iRequireThickness=@iRequireThickness,"
+                                + "iRequireWidth=@iRequireWidth,cPacking=@cPacking,cInspectionStandards=@cInspectionStandards,"
+                                + "iTemperature=@iTemperature,iHumidity=@iHumidity,cNotes=@cNotes,cPackInf=@cPackInf,cDocumentsNum=@cDocumentsNum,"
+                                + "cProductName=@cProductName,cProductCode=@cProductCode,cFProductName=@cFProductName,cFProductCode=@cFPbCPFinishedNumroductCode"
+                                + " WHERE cCode=@cCode", param);
+                        }
+                        else//更新数据
+                        {
+                            //原来数据置为作废
+                            SqlHelper.ExecuteNonQuery("UPDATE Data_Planing SET bDel=0 WHERE  cCode=@cCode AND cMachhine=@cMachhine ");
+                            //插入新的数据
+                            SqlHelper.ExecuteNonQuery("INSERT INTO Data_Planing(cSequence,dStartTime,cCode,cMachhine,cModelName,cThickness,cWidth,cLength,iWindingNum,iSpeed,iCostTiem,cSortModel,iSortNum,cUse,cRequest,cCustomer,cLayer,iRequireThickness,iRequireWidth,cPacking,cInspectionStandards,iTemperature,iHumidity,cNotes,cPackInf,cDocumentsNum,cProductName,cProductCode,cFProductName,cFProductCode,bCPFinished,bBigFinished,iCPFinishedNum,iBigFinishedNum,bDel)"
+                                   + " VALUES(@cSequence,@dStartTime,@cCode,@cMachhine,@cModelName,@cThickness,@cWidth,@cLength,@iWindingNum,@iSpeed,@iCostTiem,@cSortModel,@iSortNum,@cUse,@cRequest,@cCustomer,@cLayer,@iRequireThickness,@iRequireWidth,@cPacking,@cInspectionStandards,@iTemperature,@iHumidity,@cNotes,@cPackInf,@cDocumentsNum,@cProductName,@cProductCode,@cFProductName,@cFProductCode,'" + dt_in.Rows[0]["bCPFinished"].ToString() + "','" + dt_in.Rows[0]["bBigFinished"].ToString() + "','" + dt_in.Rows[0]["iCPFinishedNum"].ToString() + "','" + dt_in.Rows[0]["iBigFinishedNum"].ToString() + "','1')", param);
+
+                        }
                     }
                 }
             }
@@ -538,6 +567,10 @@ namespace Allsoft.BarCode.JC
             DataTable dt = fromDTcolumns(readExcel());
             if (dt != null || dt.Rows.Count > 0)
             {
+                dt.Columns.Add("cProductName", typeof(string)); //大轴产品名称
+                dt.Columns.Add("cProductCode", typeof(string)); //大轴产品编码
+                dt.Columns.Add("cFProductName", typeof(string));//成品产品名称
+                dt.Columns.Add("cFProductCode", typeof(string));//成品产品编码
                 gcPlaning.DataSource = dt;
                 btnPrint.Enabled = true;
                 btnCut.Enabled = true;
@@ -545,7 +578,7 @@ namespace Allsoft.BarCode.JC
                 btnAddTable.Enabled = false;
                 btnEdit.Enabled = true;
                 btnDel.Enabled = false;
-                btnSave.Enabled = true;
+                //btnSave.Enabled = true;
                 btnRedo.Enabled = true;
                 btnCheck.Enabled = false;
                 btnUnapprove.Enabled = false;
@@ -554,7 +587,7 @@ namespace Allsoft.BarCode.JC
         //gv值改变事件
         private void gvPlaning_CellValueChanged(object sender, DevExpress.XtraGrid.Views.Base.CellValueChangedEventArgs e)
         {
-            this.btnSave.Enabled = true;
+            //this.btnSave.Enabled = true;
             if (gvPlaning.FocusedColumn.Name == "cModelName")
             {
                 DataRow row = gvPlaning.GetDataRow(gvPlaning.FocusedRowHandle);
@@ -624,7 +657,7 @@ namespace Allsoft.BarCode.JC
         private void start()
         {
             DataView dv = this.gvPlaning.DataSource as DataView;
-            if (dv.Count <= 0)
+            if (dv==null||dv.Count <= 0)
             {
                 this.btnEdit.Enabled = false;
                 btnSave.Enabled = false;
@@ -640,18 +673,12 @@ namespace Allsoft.BarCode.JC
         }
         private void valueChanged()
         {
-            btnSave.Enabled = true;
+            //btnSave.Enabled = true;
             btnRedo.Enabled = true;
             btnCheck.Enabled = true;
             btnUnapprove.Enabled = true;
         }
 
-        private void btnProductCode_Click(object sender, EventArgs e)
-        {
-            DataTable dt = new DataTable();
-            FrmRefB frm = new FrmRefB(dt);
-            frm.RefCheckBox = false;
-        }
 
         //型号的参照选择
         private void btnModelName_Click(object sender, EventArgs e)
@@ -693,9 +720,9 @@ namespace Allsoft.BarCode.JC
                 dt.Columns[5].ColumnName = "cThickness";    //厚度
                 dt.Columns[6].ColumnName = "cWidth";        //宽度
                 dt.Columns[7].ColumnName = "cLength";       //长度
-                dt.Columns[8].ColumnName = "iWindingNum";  //收卷轴数/计划轴数
+                dt.Columns[8].ColumnName = "iWindingNum";   //收卷轴数/计划轴数
                 dt.Columns[9].ColumnName = "iSpeed";        //车速
-                dt.Columns[10].ColumnName = "iCostTiem";     //用时
+                dt.Columns[10].ColumnName = "iCostTiem";    //用时
                 dt.Columns[11].ColumnName = "cSortModel";   //整理规格
                 dt.Columns[12].ColumnName = "iSortNum";     //整理轴数
                 dt.Columns[13].ColumnName = "cUse";         //用途
@@ -779,6 +806,86 @@ namespace Allsoft.BarCode.JC
             return dt;
         }
 
-
+        /// <summary>
+        /// 成品编码选择事件
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btnProductCode_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
+        {
+            DataTable dt = Get_ProductCode();
+            FrmRefB frm = new FrmRefB(dt);
+            frm.RefCheckBox = false;
+            frm.ShowDialog();
+            if (frm.ReturnDT.Rows.Count > 0)
+            {
+                DataRow row = gvPlaning.GetDataRow(gvPlaning.FocusedRowHandle);
+                row["cFProductName"] = frm.ReturnDT.Rows[0]["cName"];
+                btnSave.Enabled = true;
+                dt = gcPlaning.DataSource as DataTable;
+                if (dt == null || dt.Rows.Count <= 0)
+                {
+                    btnSave.Enabled = false;
+                }
+                else
+                {
+                    foreach (DataRow r in dt.Rows)
+                    {
+                        if (r["cFProductCode"].Equals("")|| r["cProductName"].Equals(""))
+                            btnSave.Enabled = false;
+                    }
+                }
+            }
+            
+        }
+        /// <summary>
+        /// 大轴编码选择事件
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btnBigCode_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
+        {
+            DataTable dt = Get_BigCode();
+            FrmRefB frm = new FrmRefB(dt);
+            frm.RefCheckBox = false;
+            frm.ShowDialog();
+            if (frm.ReturnDT.Rows.Count > 0)
+            {
+                DataRow row = gvPlaning.GetDataRow(gvPlaning.FocusedRowHandle);
+                row["cProductName"] = frm.ReturnDT.Rows[0]["cName"];
+                btnSave.Enabled = true;
+                dt = gcPlaning.DataSource as DataTable;
+                if (dt == null || dt.Rows.Count <= 0)
+                {
+                    btnSave.Enabled = false;
+                }
+                else
+                {
+                    foreach (DataRow r in dt.Rows)
+                    {
+                        if (r["cProductCode"].Equals("")|| r["cFProductCode"].Equals(""))
+                            btnSave.Enabled = false;
+                    }
+                }
+            }
+        }
+        /// <summary>
+        /// 获得大轴产品编码及名称表,格式为名称编码一一对应，编码列名为cCode,名称列名为cName
+        /// </summary>
+        /// <returns></returns>
+        private DataTable Get_BigCode()
+        {
+            DataTable dt = new DataTable();
+            return dt;
+        }
+        /// <summary>
+        /// 获得成品产品编码及名称表,格式为名称编码一一对应，编码列名为cCode,名称列名为cName
+        /// </summary>
+        /// <returns></returns>
+        private DataTable Get_ProductCode()
+        {
+            DataTable dt = new DataTable();
+            return dt;
+        }
     }
 }

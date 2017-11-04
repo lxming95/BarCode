@@ -439,7 +439,7 @@ namespace Allsoft.BarCode.Print
             SqlDataAdapter sda = new SqlDataAdapter(sql, con);
             DataTable dt = new DataTable();
             sda.Fill(dt);
-            dt.Dispose();
+            //dt.Dispose();
             return dt;
             //con.Close();
         }
@@ -456,7 +456,8 @@ namespace Allsoft.BarCode.Print
             SqlDataAdapter sda = new SqlDataAdapter(cmd);
             DataTable dt = new DataTable();
             sda.Fill(dt);
-            dt.Dispose();
+            //dt.Dispose();
+            cmd.Parameters.Clear();
             return dt;
             //con.Close();
         }

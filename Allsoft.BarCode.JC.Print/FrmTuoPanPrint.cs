@@ -1,14 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Text;
-using System.Linq;
-using System.Windows.Forms;
+﻿using Allsoft.BarCode.Print;
 using DevExpress.XtraEditors;
-using Allsoft.BarCode.Print;
+using System;
+using System.Data;
+using System.Data.SqlClient;
 using System.Text.RegularExpressions;
+using System.Windows.Forms;
 
 namespace Allsoft.BarCode.JC
 {
@@ -60,15 +56,30 @@ namespace Allsoft.BarCode.JC
 
             if (e.KeyCode == Keys.Enter)//如果输入的是回车键  
             {
-                string s = txtCode.Text.ToString();
-                if (isSafe(s))
+                if (txtCode.Text != "")
                 {
-                    DataTable dt = gcProdctList.DataSource as DataTable;
-                    dt.Rows.Add();
-                    dt.Rows[dt.Rows.Count-1]["cCode"] = txtCode.Text;
-                    gcProdctList.DataSource = dt;
+                    foreach (DataRow r in (gcProdctList.DataSource as DataTable).Rows)
+                    {
+                        if (r["cCode"].Equals(txtCode.Text))
+                        {
+                            XtraMessageBox.Show("该码已存在，请扫描其他码");
+                            return;
+                        }
+                    }
+                    if (isSafe(txtCode.Text))
+                    {
+                        SqlParameter[] param = new SqlParameter[] { new SqlParameter("g_ccdcode", txtCode.Text) };
+                        DataTable dt = SqlHelper.Table("SELECT * FROM data_printlog WHERE g_ccdcode=@g_ccdcode AND do_flag='1'");
+                        if (dt != null && dt.Rows.Count > 0)
+                        {
+                            dt = gcProdctList.DataSource as DataTable;
+                            dt.Rows.Add();
+                            dt.Rows[dt.Rows.Count - 1]["cCode"] = txtCode.Text;
+                            gcProdctList.DataSource = dt;
+                        }
+                    }
+                    txtCode.Text = "";
                 }
-                txtCode.Text = "";
             }
         }
         /// <summary>

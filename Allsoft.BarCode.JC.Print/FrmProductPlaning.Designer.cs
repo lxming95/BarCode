@@ -527,6 +527,8 @@
             this.dStartTime.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.dStartTime.AppearanceHeader.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.dStartTime.Caption = "生产开始时间";
+            this.dStartTime.DisplayFormat.FormatString = "u";
+            this.dStartTime.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
             this.dStartTime.FieldName = "dStartTime";
             this.dStartTime.Fixed = DevExpress.XtraGrid.Columns.FixedStyle.Left;
             this.dStartTime.Name = "dStartTime";
@@ -557,7 +559,7 @@
             this.btnModelName.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton()});
             this.btnModelName.Name = "btnModelName";
-            this.btnModelName.Click += new System.EventHandler(this.btnModelName_Click);
+            this.btnModelName.ButtonClick += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.btnModelName_ButtonClick);
             // 
             // cProductName
             // 
@@ -565,6 +567,7 @@
             this.cProductName.FieldName = "cProductName";
             this.cProductName.Fixed = DevExpress.XtraGrid.Columns.FixedStyle.Left;
             this.cProductName.Name = "cProductName";
+            this.cProductName.OptionsColumn.AllowEdit = false;
             this.cProductName.Visible = true;
             this.cProductName.VisibleIndex = 4;
             this.cProductName.Width = 82;
@@ -594,6 +597,7 @@
             this.cFProductName.FieldName = "cFProductName";
             this.cFProductName.Fixed = DevExpress.XtraGrid.Columns.FixedStyle.Left;
             this.cFProductName.Name = "cFProductName";
+            this.cFProductName.OptionsColumn.AllowEdit = false;
             this.cFProductName.Visible = true;
             this.cFProductName.VisibleIndex = 6;
             this.cFProductName.Width = 82;

@@ -106,29 +106,29 @@ namespace Allsoft.BarCode.JC
         private void btnSearch_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             DataTable dt = new DataTable();
-            SqlParameter[] param = new SqlParameter[] { new SqlParameter("@cCode", this.txtCode.Text),
+            SqlParameter[] param = new SqlParameter[] { //new SqlParameter("@cCode", this.txtCode.Text),
                //new SqlParameter("@dMake_time1", this.txtData1.Text), new SqlParameter("@dMake_time2", this.txtData2.Text),
-               // new SqlParameter("@cThickness", this.txtThickness.Text), new SqlParameter("@cWidth", this.txtWidth.Text),
+                new SqlParameter("@cThickness", this.txtThickness.Text), new SqlParameter("@cWidth", this.txtWidth.Text),
                 new SqlParameter("@cCustomer", this.txtCustomer.Text), new SqlParameter("@cProductModel", this.txtProductModel.Text),
                 new SqlParameter("@cBigLength", this.txtBigLength.Text),
             };
             string where = "";
             if (this.txtCode.Text != "")
-                where += " and cCode= @cCode";
+                where += " and cCode like '%"+ this.txtCode.Text+"%'";
             if (this.txtData1.Text != "")
                 where += " and dMake_time >'"+ this.txtData1.Text+"' ";
             if (this.txtData2.Text != "")
                 where += " and dMake_time <'"+ this.txtData2.Text+"' ";
             if (this.txtThickness.Text != "")
-                where += " and cModel like '%"+ this.txtThickness.Text + "%'";
+                where += " and cThickness=@cThickness";
             if (this.txtWidth.Text != "")
-                where += " and cModel like '%" + this.txtWidth.Text + "%'";
+                where += " and cWidth=@cWidth";
             if (this.txtCustomer.Text != "")
                 where += " and cCustomer=@cCustomer";
             if (this.txtProductModel.Text != "")
                 where += " and cModelName=@cProductModel";
             if (this.txtBigLength.Text != "")
-                where += "";
+                where += "and cLength=@cBigLength";
 
             dt = SqlHelper.Table("SELECT * FROM Data_Planing AS a LEFT JOIN (SELECT Did,cCode as code,cMake_person,dMake_time,cCheck_person,dCheck_time,do_flag FROM Data_Documents) AS b ON a.cDocumentsNum = b.code where '1'='1' " + where, param);
             this.gcPlanList.DataSource = dt;

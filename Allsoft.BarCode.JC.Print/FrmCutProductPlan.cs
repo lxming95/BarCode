@@ -56,8 +56,10 @@ namespace Allsoft.BarCode.JC
                 this.txtPackInf.Text = dt.Rows[0]["cPackInf"].ToString();
                 this.txtNotes.Text= dt.Rows[0]["cNotes"].ToString();
                 this.txtPackInf.Text= dt.Rows[0]["cPackInf"].ToString();
-                this.txtTemperature.Text = ConfigurationManager.AppSettings["Temperature"].ToString();
-                this.txtHumidity.Text= ConfigurationManager.AppSettings["Humidity"].ToString();
+                this.txtTemperature.Text = dt.Rows[0]["iTemperature"].ToString();
+                this.txtHumidity.Text= dt.Rows[0]["iHumidity"].ToString();
+                this.txtInspectionStandards.Text = dt.Rows[0]["cInspectionStandards"].ToString();
+
                 param = new SqlParameter[] { new SqlParameter("@cCode", dt.Rows[0]["cDocumentsNum"].ToString()), };
                 dt = SqlHelper.Table("SELECT * FROM Data_Documents where cCode=@cCode", param);
                 this.txtmaker.Text = dt.Rows[0]["cMake_person"].ToString();
